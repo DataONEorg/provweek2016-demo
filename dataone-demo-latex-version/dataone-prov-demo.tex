@@ -98,7 +98,7 @@ DataONE (Data Observation Network for Earth) is a federated data network and a s
 \mypara{(1) Member Nodes} are existing or new data repositories that support the DataONE Member Node API.  Tier-1 Member Nodes (MN) implement anonymous, read-only access to data and metadata and enable discovery of all objects available on the MN, with low level descriptions of each object, object retrieval by identifier, and activity reporting. MNs also provide science metadata and relationships between metadata and data using resource maps \cite{oaiore} to facilitate discovery.  MNs can also implement higher tiers of the DataONE API, including authenticatied and restricted data access (Tier-2), write access to storage resources (Tier-3), and replication of data from other nodes (Tier-4).
 
 
-\mypara{(2) Coordinating Nodes} serve data management and discovery needs of the network. Services of a Coordinating Node (CN) include network-wide indexing of data objects, coordination of data replication between MNs, mirrored content of \emph{science metadata} (detailed descriptions of science data objects and collections) and \emph{system metadata} (low level metadata, e.g., data type, size, ownership, location) present at MNs.
+\mypara{(2) Coordinating Nodes} (CN) serve coordination and discovery needs of the network. Services of a CN include network-wide indexing of data objects, coordination of data replication between MNs, mirrored content of \emph{science metadata} (detailed descriptions of science data objects and collections) and \emph{system metadata} (low level metadata, e.g., data type, size, ownership, location) present at MNs.
 
 
 \mypara{(3) Investigator Toolkit.} The Investigator Toolkit (ITK) contains user tools that enable interaction with DataONE infrastructure through a REST service API exposed by the CNs and MNs. Python and Java libraries are available for application developers, and DataONE support is present in scientific analysis tools such as Matlab and R.
@@ -108,14 +108,14 @@ The DataONE infrastructure was released for public use in 2012 and supports iden
 
 %\subsection*{DataONE Search}
 
-\mypara{DataONE Search} is a web-based application allowing users to seamlessly and efficiently discover publicly accessible data packages within the DataONE federated network of Member Node repositories. It was released in November 2015, and allows users to search by map, dates, keywords and other facets and to refine the results using further parameters. Users can sign in to DataONE Search using ORCID credentials, Google accounts, and institutional accounts.
+\mypara{DataONE Search} is a web-based application allowing users to seamlessly and efficiently discover publicly accessible data packages within the DataONE federated network of Member Node repositories. It allows users to search by map, dates, keywords and other facets and to refine the results using further parameters. Users sign in to DataONE Search using ORCID credentials, Google accounts, or institutional accounts.
 
 The software has been designed to facilitate rapid iteration and deployment of new features and to take full advantage of future capabilities offered by upcoming versions of the core cyberinfrastructure. Notable among these is the \emph{provenance information} within search and discovery. In the next section, we will demonstrate new DataONE provenance tools and the visualization of provenance with DataONE Search.
 
 
 \section{Demonstration Description}  \label{demo}
 
-DataONE has developed a \emph{Run Manager} for capturing provenance from R \cite{recordr} and Matlab \cite{matlabdataone} script executions, and contributed to the development of YesWorkflow \cite{yesworkflow} to provide an improved understanding of a script in terms of its user-declared workflow structure and system-recorded file I/O. The automatic capture of the latter is transparent to scientists and provides medium-grained\footnote{unlike the fine-grained provenance captured, e.g., by noWorkflow \cite{nw14}} provenance by focusing on file I/O events.
+DataONE has developed a \emph{Run Manager} API for capturing provenance from R \cite{recordr} and Matlab \cite{matlabdataone} script executions, and contributed to the development of YesWorkflow \cite{yesworkflow} to provide an improved understanding of a script in terms of its user-declared workflow structure and system-recorded file I/O. The automatic capture of the latter is transparent to scientists and provides medium-grained\footnote{unlike the fine-grained provenance captured, e.g., by noWorkflow \cite{nw14}} provenance by focusing on file I/O events.
 
 We will use an example to introduce the core provenance and search features of DataONE. Suppose that Alice is an earth scientist whose work involves generating global grass fraction maps from water, air temperature, and other input data. Bob is a scientist who runs a grassland water use efficiency analysis built upon Alice's output. Charlie is a user of DataONE.
 
