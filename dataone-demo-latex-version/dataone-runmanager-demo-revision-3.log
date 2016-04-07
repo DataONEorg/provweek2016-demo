@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  7 APR 2016 11:18
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  7 APR 2016 11:38
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -443,13 +443,13 @@ at-ing the DataONE-compliant
  []
 
 [3 <./figs/alice-bob-charlie-sequence-crop.pdf>]
-<figs/ab-crop.pdf, id=106, 588.1975pt x 355.3275pt>
+<figs/ab-crop.pdf, id=109, 588.1975pt x 355.3275pt>
 File: figs/ab-crop.pdf Graphic file (type pdf)
  <use figs/ab-crop.pdf>
 Package pdftex.def Info: figs/ab-crop.pdf used on input line 169.
 (pdftex.def)             Requested size: 208.27623pt x 125.81953pt.
 
-[4 <./figs/ab-crop.pdf>] <figs/abc-crop.pdf, id=190, 644.4075pt x 394.47375pt>
+[4 <./figs/ab-crop.pdf>] <figs/abc-crop.pdf, id=193, 644.4075pt x 394.47375pt>
 File: figs/abc-crop.pdf Graphic file (type pdf)
 
 <use figs/abc-crop.pdf>
@@ -482,10 +482,10 @@ Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 240.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 240.
  ) 
 Here is how much of TeX's memory you used:
- 6820 strings out of 493117
- 104643 string characters out of 6135433
- 200993 words of memory out of 5000000
- 10188 multiletter control sequences out of 15000+600000
+ 6822 strings out of 493117
+ 104662 string characters out of 6135433
+ 201022 words of memory out of 5000000
+ 10189 multiletter control sequences out of 15000+600000
  24043 words of font info for 49 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  44i,9n,42p,1266b,397s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -501,11 +501,11 @@ xmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2014/texmf-dist
 /fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/typ
 e1/urw/times/utmr8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/tim
 es/utmri8a.pfb>
-Output written on dataone-runmanager-demo-revision-3.pdf (6 pages, 1858038 byte
+Output written on dataone-runmanager-demo-revision-3.pdf (6 pages, 1858434 byte
 s).
 PDF statistics:
- 326 PDF objects out of 1000 (max. 8388607)
- 229 compressed objects within 3 object streams
- 33 named destinations out of 1000 (max. 500000)
+ 331 PDF objects out of 1000 (max. 8388607)
+ 233 compressed objects within 3 object streams
+ 34 named destinations out of 1000 (max. 500000)
  16 words of extra memory for PDF output out of 10000 (max. 10000000)
 
