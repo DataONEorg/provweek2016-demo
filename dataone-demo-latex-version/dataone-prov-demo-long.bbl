@@ -1,0 +1,93 @@
+\newcommand{\etalchar}[1]{$^{#1}$}
+\begin{thebibliography}{MBC{\etalchar{+}}15}
+
+\bibitem[chr]{christopher}
+{Christopher Schwalm's DataPackage}.
+\newblock
+  \url{https://search-sandbox-2.test.dataone.org/#view/metadata_07277c1f-b2c2-467c-8aa2-792863524a21.xml/}.
+\newblock [last accessed 10-April-2016].
+
+\bibitem[data]{dataone}
+{Data Observation Network for Earth (DataONE)}.
+\newblock \url{https://www.dataone.org}.
+\newblock [last accessed 10-April-2016].
+
+\bibitem[datb]{dataone-demo}
+{DataONE Search Demo Site}.
+\newblock \url{https://search-sandbox-2.test.dataone.org}.
+\newblock [last accessed 10-April-2016].
+
+\bibitem[FKSS08]{Freire2008}
+Juliana Freire, David Koop, Emanuele Santos, and Cl{\'{a}}udio~T Silva.
+\newblock {Provenance for Computational Tasks: A Survey}.
+\newblock {\em Computing in Science and Engineering}, 10(3):11--21, 2008.
+
+\bibitem[JCSJ]{matlabdataone}
+Christopher Jones, Yang Cao, Peter Slaughter, and Matthew~B. Jones.
+\newblock {Matlab DataONE Toolbox}.
+\newblock \url{https://github.com/DataONEorg/matlab-dataone}.
+\newblock [last accessed 10-April-2016].
+
+\bibitem[KS14]{Katz}
+Daniel~S. Katz and Arfon~M. Smith.
+\newblock Implementing transitive credit with {JSON-LD}.
+\newblock {\em CoRR}, abs/1407.5117, 2014.
+
+\bibitem[MBC{\etalchar{+}}15]{nw14}
+Leonardo Murta, Vanessa Braganholo, Fernando Chirigati, David Koop, and Juliana
+  Freire.
+\newblock {\em No Workflow: Capturing and analyzing provenance of scripts},
+  volume 8628 of {\em Lecture Notes in Computer Science (including subseries
+  Lecture Notes in Artificial Intelligence and Lecture Notes in
+  Bioinformatics)}, pages 71--83.
+\newblock Springer Verlag, 2015.
+
+\bibitem[Mis16]{data-trajectories}
+Paolo Missier.
+\newblock {Data trajectories: tracking reuse of published data for transitive
+  credit attribution}.
+\newblock In {\em Procs. 11th International Data Curation Conference}. DCC,
+  2016.
+
+\bibitem[MLB{\etalchar{+}}10]{missing-link}
+Paolo Missier, Bertram Lud\"ascher, Shawn Bowers, Manish~Kumar Anand, Ilkay
+  Altintas, Saumen Dey, Anandarup Sarkar, Biva Shrestha, and Carole Goble.
+\newblock {Linking Multiple Workflow Provenance Traces for Interoperable
+  Collaborative Science}.
+\newblock In {\em Proc.s 5th Workshop on Workflows in Support of Large-Scale
+  Science (WORKS)}, 2010.
+
+\bibitem[MSK{\etalchar{+}}15]{yesworkflow}
+Timothy McPhillips, Tianhong Song, Tyler Kolisnik, Steve Aulenbach, Khalid
+  Belhajjame, R.~Kyle Bocinsky, Yang Cao, James Cheney, Fernando Chirigati,
+  Saumen Dey, Juliana Freire, Christopher Jones, James Hanken, Keith~W.
+  Kintigh, Timothy~A. Kohler, David Koop, James~A. Macklin, Paolo Missier, Mark
+  Schildhauer, Christopher Schwalm, Yaxing Wei, Mark Bieda, and Bertram
+  Lud\"ascher.
+\newblock {YesWorkflow: A User-Oriented, Language-Independent Tool for
+  Recovering Workflow Information from Scripts}.
+\newblock {\em International Journal of Digital Curation}, 10(1):298--313,
+  2015.
+
+\bibitem[oai]{oaiore}
+{Open Archives Initiative Object Reuse and Exchange}.
+\newblock \url{https://www.openarchives.org/ore/}.
+\newblock [last accessed 10-April-2016].
+
+\bibitem[proa]{provone}
+{ProvONE: A PROV Extension Data Model for Scientific Workflow Provenance}.
+\newblock \url{https://purl.dataone.org/provone-v1-dev}.
+\newblock [last accessed 10-April-2016].
+
+\bibitem[prob]{prov-o}
+{W3C PROV-O: The PROV Ontology}.
+\newblock \url{https://www.w3.org/TR/prov-o/}.
+\newblock [last accessed 10-April-2016].
+
+\bibitem[yax]{yaxing}
+{YaXing Wei's DataPackage}.
+\newblock
+  \url{https://search-sandbox-2.test.dataone.org/#view/metadata_e859d2dd-c5e6-4ec6-892f-1b00bb6f8f65.xml}.
+\newblock [last accessed 10-April-2016].
+
+\end{thebibliography}
