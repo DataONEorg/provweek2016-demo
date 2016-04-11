@@ -161,7 +161,7 @@ We introduce the provenance and search features of DataONE by means of an exampl
 %\begin{figure}[t] \centering \includegraphics[width=0.5\textwidth]{alice-bob-charlie-sequence} \caption{Run Manager Demonstration: (1) Alice runs \mytt{script.m} with the DataONE Run Manager to create data package $P_A$, which she publishes to the DataONE network; (2) Bob later finds and downloads Alice's data, uses it in his \mytt{analysis.m}, creating and then publishing package $P_B$; (3) Charlie searches DataONE, finds Bob's $P_B$, and recognizes its dependence on Alice's $P_A$.}  \label{fig0} \end{figure}
 
 
-As shown at the top of Fig.~\ref{fig0}, Alice has developed a script for producing Carbon3/Carbon4 soil maps.  She uses the YesWorkflow (YW) tool to mark-up the script and expose the underlying workflow view (i.e., prospective provenance) that is inherent in her soil mapping code as shown in Figure\ref{yw-graph}. 
+As shown at the top of Fig.~\ref{fig0}, Alice has developed a script for producing Carbon3/Carbon4 soil maps.  She uses the YesWorkflow (YW) tool to mark-up the script and expose the underlying workflow view (i.e., prospective provenance) that is inherent in her soil mapping code as shown in Fig.\ref{yw-graph}. 
 
 \begin{figure}[t] \centering \includegraphics[width=0.4\textwidth]{figs/alice-bob-charlie-sequence-crop} \caption{Run Manager Demonstration: (1) Alice runs \mytt{script.m} with the DataONE Run Manager to create data package $P_A$, which she publishes to the DataONE network; (2) Bob later finds and downloads Alice's data, uses it in his \mytt{analysis.m}, creating and then publishing package $P_B$; (3) Charlie searches DataONE, finds Bob's $P_B$, and recognizes its dependence on Alice's $P_A$.}  \label{fig0} \end{figure}
 
@@ -174,7 +174,7 @@ By using the \emph{Run Manager} to run her script, Alice not only obtains the ex
 ProvONE~\cite{provone} is an extension of the W3C PROV-O~\cite{prov-o} standard for representing provenance, and includes specializations for representing both retrospective provenance about the runtime execution and prospective provenance about the structure and flow of the analytical script or workflow.
 %
 At the end of the experimentation phase, Alice is ready to publish her results to a DataONE MN. 
-To do so, she uses the  DataONE Matlab tool to automatically generate a DataONE-compliant data package in OAI-ORE format, including the ProvONE provenance document, the script itself, and its YW-generated workflow view. A partial ProvONE provenance statements included in the uploaded Alice?s data package in Figure~\ref{list1}.
+To do so, she uses the  DataONE Matlab tool to automatically generate a DataONE-compliant data package in OAI-ORE format, including the ProvONE provenance document, the script itself, and its YW-generated workflow view. A partial ProvONE provenance statements included in the uploaded Alice?s data package in Fig.~\ref{list1}.
 
 \begin{figure}[!h] \centering \includegraphics[width=1.7\textwidth]{figs/alice-ttl} \caption{ProvONE provenance statements included in the uploaded Alice's data package}  \label{list1} \end{figure}
 
@@ -200,7 +200,7 @@ As they are both indexed by the CN upon publication of the data package, this lo
 %\authornote{PM}{Charlie discovers Bob's data packages on DataONE and is able to navigate back to the data that Bob used, i.e., Alice's data package depicted in Figure~\ref{fig2}~\cite{Katz,data-trajectories}.
 %}
 
-Charlie discovers Bob's data packages on DataONE and is able to navigate back to the data that Bob used, i.e., Alice's data package depicted in Figure~\ref{fig2}~\cite{Katz,data-trajectories}. When he searches the DataONE network using the same keyword ``grass'' from the web search interface, two data packages are displayed as shown in Figure~\ref{fig1}, namely Alice's and Bob's. 
+Charlie discovers Bob's data packages on DataONE and is able to navigate back to the data that Bob used, i.e., Alice's data package depicted in Fig.~\ref{fig2}~\cite{Katz,data-trajectories}. When he searches the DataONE network using the same keyword ``grass'' from the web search interface, two data packages are displayed as shown in Fig.~\ref{fig1}, namely Alice's and Bob's. 
 One data package is created by ``Alice'' \cite{yaxing}, the other is created by ``Bob'' \cite{christopher}. 
 %\authornote{PM}{I'm not quite sure how to fit Yaxing and Chris names here, it looks odd... why not replace Alice and Bob with Yaxing and Chris from the beginning?!?  and explain upfront that they are real scientists.}
 %
@@ -213,7 +213,7 @@ Provenance details for any input or output in the provenance graph can be viewed
 %
 In this example, Charlie quickly learns that Alice's script (C3\_C4\_map\_present\_with\_comments.m) takes twenty-five input files and produces six outputs, shown on the left and right side of Alice's data package, respectively. The bottom three outputs in Alice's data package are the NetCDF data files that represent three different world map grids of percentage of grass types (C3 grass fraction, C4 grass fraction, and total grass fraction). In addition, a model graph is displayed at the intermediate layer that was generated by the YesWorkflow tool~\cite{yesworkflow}. Alice's used embedded YesWorkflow annotations to document her script. These annotations declare step by step how data are used and derived in the script. 
 
-Similarly, from the provenance information associated with Bob's data package in Figure~\ref{fig2}, we see that it takes eight inputs, and produces two visualizations. By viewing the details for each input, we can see that three of them are the outputs produced by Alice's data package.  
+Similarly, from the provenance information associated with Bob's data package in Fig.~\ref{fig2}, we see that it takes eight inputs, and produces two visualizations. By viewing the details for each input, we can see that three of them are the outputs produced by Alice's data package.  
 
 
 \begin{figure}[t]
