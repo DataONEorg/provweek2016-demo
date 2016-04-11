@@ -163,17 +163,20 @@ We introduce the provenance and search features of DataONE by means of an exampl
 
 As shown at the top of Fig.~\ref{fig0}, Alice has developed a script for producing Carbon3/Carbon4 soil maps.  She uses the YesWorkflow (YW) tool to mark-up the script and expose the underlying workflow view (i.e., prospective provenance) that is inherent in her soil mapping code as shown in Figure\ref{yw-graph}. 
 
+\begin{figure}[t] \centering \includegraphics[width=0.4\textwidth]{figs/alice-bob-charlie-sequence-crop} \caption{Run Manager Demonstration: (1) Alice runs \mytt{script.m} with the DataONE Run Manager to create data package $P_A$, which she publishes to the DataONE network; (2) Bob later finds and downloads Alice's data, uses it in his \mytt{analysis.m}, creating and then publishing package $P_B$; (3) Charlie searches DataONE, finds Bob's $P_B$, and recognizes its dependence on Alice's $P_A$.}  \label{fig0} \end{figure}
+
 \begin{figure}[!h] \centering \includegraphics[width=1.05\textwidth]{figs/C3_C4_map_present_NA_workflow_comb_diagram} \caption{A combined view of the YesWorkflow model for Alice's soil processing scripts.}  \label{yw-graph} \end{figure}
 
 %\authornote{PM}{need a ref here?  and a figure with the graph produced by YW on this script would be really useful to bring this part to life!}
 
-\begin{figure}[t] \centering \includegraphics[width=0.4\textwidth]{figs/alice-bob-charlie-sequence-crop} \caption{Run Manager Demonstration: (1) Alice runs \mytt{script.m} with the DataONE Run Manager to create data package $P_A$, which she publishes to the DataONE network; (2) Bob later finds and downloads Alice's data, uses it in his \mytt{analysis.m}, creating and then publishing package $P_B$; (3) Charlie searches DataONE, finds Bob's $P_B$, and recognizes its dependence on Alice's $P_A$.}  \label{fig0} \end{figure}
 
 By using the \emph{Run Manager} to run her script, Alice not only obtains the expected results, but she also captures their provenance, compliant with DataONE's ProvONE data model. 
 ProvONE~\cite{provone} is an extension of the W3C PROV-O~\cite{prov-o} standard for representing provenance, and includes specializations for representing both retrospective provenance about the runtime execution and prospective provenance about the structure and flow of the analytical script or workflow.
 %
 At the end of the experimentation phase, Alice is ready to publish her results to a DataONE MN. 
 To do so, she uses the  DataONE Matlab tool to automatically generate a DataONE-compliant data package in OAI-ORE format, including the ProvONE provenance document, the script itself, and its YW-generated workflow view. A partial ProvONE provenance statements included in the uploaded Alice?s data package in Figure~\ref{list1}.
+
+\begin{figure}[!h] \centering \includegraphics[width=1.7\textwidth]{figs/alice-ttl} \caption{ProvONE provenance statements included in the uploaded Alice's data package}  \label{list1} \end{figure}
 
 \subsection{Bob's data reuse}
 
@@ -244,9 +247,6 @@ Maintaining the link between Alice's work and Bob's subsequent work is worth dis
 
 Future work of the current provenance tools include: (1) solve the broken link use case; (2) support more I/O functions; (3) handle complex scenarios such as multiple runs of a script and multiple users; (4) variable-level provenance capture warrants further investigation and efforts.
 
-\section{Appendix}
-
-\begin{figure}[t] \centering \includegraphics[width=1.7\textwidth]{figs/alice-ttl} \caption{ProvONE provenance statements included in the uploaded Alice's data package}  \label{list1} \end{figure}
 
 \bibliography{references}
 \bibliographystyle{alpha}
