@@ -43,6 +43,7 @@ linkcolor=blue,
     \begin{center}
         \framebox{
             {\begin{minipage}[t]{0.9\linewidth}
+                \color{red}
                 \raggedright  \textbf{[#1]}~ \scriptsize #2 \normalsize
             \end{minipage}}
     }
@@ -138,7 +139,7 @@ orphan sentence, but it seems to try and say too much -- is it necessary?}
 
 We introduce the provenance and search features of DataONE by means of an example involving three earth scientists who interact through a DataONE MN, as shown in Fig.~\ref{fig0}. First Alice generates and publishes new global grass fraction maps from observational data, eg water, air temperature. Then Bob uses Alice's data to run further analysis, i.e., on grassland water use efficiency and publishes it back to a DataONE MN. Finally, Charlie, a DataONE user, examines the provenance of Bob's published data to determine its suitability for his own use.
 
-\subsection{Alice's data generation}
+\subsection{Alice's Data Generation}
 
 %\begin{figure}
 %\centering   
@@ -173,7 +174,7 @@ ProvONE~\cite{provone} is an extension of the W3C PROV-O~\cite{prov-o} standard 
 At the end of the experimentation phase, Alice is ready to publish her results to a DataONE MN. 
 To do so, she uses the  DataONE Matlab tool to automatically generate a DataONE-compliant data package in OAI-ORE format, including the ProvONE provenance document, the script itself, and its YW-generated workflow view.
 
-\subsection{Bob's data reuse}
+\subsection{Bob's Data Reuse}
 
 Bob's interaction with DataONE begins with a user interface search, i.e., using the keyword ``grass'', he discovers Alice's data package \cite{yaxing}, amongst others. 
 \authornote{PM}{Why  is \cite{yaxing} cited here?}
@@ -190,7 +191,7 @@ At this point, the two provenance documents are physically disjoint, as they res
 As they are both indexed by the CN upon publication of the data package, this logical connection emerges automatically when a third party, such as Charlie in our example, explores one of the two data packages.
 
 
-\subsection{Charlie's visual data navigation}
+\subsection{Charlie's Visual Data Navigation}
 
 \authornote{PM}{Charlie discovers Bob's data packages on DataONE and is able to navigate back to the data that Bob used, i.e., Alice's data package depicted in Figure~\ref{fig2}~\cite{Katz,data-trajectories}.
 }
@@ -233,7 +234,7 @@ Similarly, from the provenance information associated with Bob's data package in
 \end{figure}
 
 
-\section{Discussion and future work}
+\section{Discussion and Future Work}
 
 This paper demonstrates a notable new feature (provenance capture and search) of DataONE. DataONE has released the DataONE Search for public use in November 2015, and the R and Matlab provenance tool to the public in 2016. 
 
@@ -242,51 +243,20 @@ Maintaining the link between Alice's work and Bob's subsequent work is worth dis
 
 Future work of the current provenance tools include: (1) solve the broken link use case; (2) support more I/O functions; (3) handle complex scenarios such as multiple runs of a script and multiple users; (4) variable-level provenance capture warrants further investigation and efforts.
 
-\section{Appendix}
-
-\begin{figure}[t] \centering \includegraphics[width=1.7\textwidth]{figs/alice-ttl} \caption{ProvONE provenance statements included in the uploaded Alice's data package}  \label{list1} \end{figure}
 
 \bibliography{references}
 \bibliographystyle{alpha}
 
-%
-%\begin{thebibliography}{4}
-%\small
-%
-%\bibitem{christopher} Christopher Schwalm's DataPackage, \url{https://search-sandbox-2.test.dataone.org/#view/metadata_07277c1f-b2c2-467c-8aa2-792863524a21.xml}
-%
-%\bibitem{yaxing} YaXing Wei's DataPackage, \url{https://search-sandbox-2.test.dataone.org/#view/metadata_e859d2dd-c5e6-4ec6-892f-1b00bb6f8f65.xml}
-%
-%\bibitem{dataone} Data Observation Network for Earth (DataONE), \url{https://www.dataone.org}
-%
-%\bibitem{dataone-demo} DataONE Search Demo Site, \url{https://search-sandbox-2.test.dataone.org}
-%
-%\bibitem{matlabdataone} Jones C., Cao Y., Slaughter P., Jones M.: Matlab DataONE Toolbox. \url{https://github.com/DataONEorg/matlab-dataone} (2016)
-%
-%\bibitem{Katz} Katz, D.S. \& Smith, A.M.: Implementing Transitive Credit with JSON-LD. Journal of Open Research Software. 3(1), p.e7. (2015) 
-%
-%\bibitem{nw14} Murta, L., Braganholo, V., Chirigati, F., Koop, D., Freire, J.: noWorkflow:
-%  Capturing and analyzing provenance of scripts. In: International Provenance
-%  and Annotation Workshop (IPAW). pp. 71--83. Cologne, Germany (2014)
-%
-%\bibitem{yesworkflow} McPhillips T., Song T., Kolisnik T., Aulenbach S., Belhajjame K., Bocinsky R.K., Cao Y., Cheney J., Chirigati F., Dey S., Freire J., Jones C., Hanken J., Kintigh K.W., Kohler T.A., Koop D., Macklin J. A., Missier P., Schildhauer M., Schwalm C., Wei Y., Bieda M., and Lud\"ascher B.: YesWorkflow: A User-Oriented, Language-Independent Tool for Recovering Workflow Information from Scripts. Intl.\  Journal for Digital Curation, 10, 298--313. (2015)
-%
-%\bibitem{missing-link} Missier, P., Lud\"ascher, B., Bowers, S., Anand, M. K., Altintas, I., Dey, S., Sarkar, A., Shrestha, B. and Goble, C.: Linking Multiple Workflow Provenance Traces for Interoperable Collaborative Science.  In: 5th Workshop on Workflows in Support of Large-Scale Science. (2010). 
-%
-%\bibitem{data-trajectories} Missier, P.: Data Trajectories: Tracking Reuse of Published Data for Transitive Credit Attribution. In: 11th International Data Curation Conference. (2016). 
-%
-%\bibitem{recordr} Slaughter P., Jones M., Jones C.: NCEAS recordr: Provenance tracking for R. \url{https://github.com/NCEAS/recordr} (2016)
-%
-%\bibitem{oaiore} Open Archives Initiative Object Reuse and Exchange, \url{https://www.openarchives.org/ore/}
-%
-%\bibitem{provone} ProvONE: A PROV Extension Data Model for Scientific Workflow Provenance, \url{https://purl.dataone.org/provone-v1-dev}
-%
-%\bibitem{prov-o} W3C PROV-O: The PROV Ontology, \url{https://www.w3.org/TR/prov-o/}
-%
-%
-%
-%\end{thebibliography}
-%
+\newpage
 
+\begin{appendix}
+\section{Appendix}
+
+\authornote{BL}{Could include the ProvONE statements as a verbatim environment instead of figure/PDF}
+
+\begin{figure}[h] \centering \includegraphics[width=0.8\textwidth]{figs/alice-ttl} 
+\caption{ProvONE provenance statements included in the uploaded Alice's data package}  \label{list1} \end{figure}
+
+\end{appendix}
 
 \end{document}
