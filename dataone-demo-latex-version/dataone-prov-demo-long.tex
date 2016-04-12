@@ -54,7 +54,9 @@ linkcolor=blue,
 
 \lstset{
 language=XML,           
-basicstyle=\tiny 
+basicstyle=\tiny,
+breaklines=true,
+frame=single
 }
 
 
@@ -299,13 +301,11 @@ Future work of the current provenance tools include: (1) solve the broken link u
   ns3:isDocumentedBy <https://cn-sandbox-2.test.dataone.org/cn/v2/resolve/metadata_e859d2dd-c5e6-4ec6-892f-1b00bb6f8f65.xml> .
 
 <https://cn-sandbox-2.test.dataone.org/cn/v1/resolve/resourceMap_e859d2dd-c5e6-4ec6-892f-1b00bb6f8f65.rdf#aggregation> 
-  ore:aggregates <https://cn-sandbox-2.test.dataone.org/cn/v2/resolve/26a557a5-a256-43f8-940c-549e2a9a55a3> , 
-     <https://cn-sandbox-2.test.dataone.org/cn/v2/resolve/75f7332b-2143-4c66-9a3c-c645781733c0> ;
+  ore:aggregates <https://cn-sandbox-2.test.dataone.org/cn/v2/resolve/26a557a5-a256-43f8-940c-549e2a9a55a3> , <https://cn-sandbox-2.test.dataone.org/cn/v2/resolve/75f7332b-2143-4c66-9a3c-c645781733c0> ;
   ore:isDescribedBy <https://cn-sandbox-2.test.dataone.org/cn/v1/resolve/resourceMap_e859d2dd-c5e6-4ec6-892f-1b00bb6f8f65.rdf> ;
   a ore:Aggregation ;
   dc:title "DataONE Aggregation" ;
-  ore:aggregates <https://cn-sandbox-2.test.dataone.org/cn/v2/resolve/air.2m_monthly_2000_2010_mean.1.nc> , 
-                           <https://cn-sandbox-2.test.dataone.org/cn/v2/resolve/SYNMAP_PRESENTVEG_Grass_Fraction_NA_v2.0.nc> .
+  ore:aggregates <https://cn-sandbox-2.test.dataone.org/cn/v2/resolve/air.2m_monthly_2000_2010_mean.1.nc> , <https://cn-sandbox-2.test.dataone.org/cn/v2/resolve/SYNMAP_PRESENTVEG_Grass_Fraction_NA_v2.0.nc> .
 
 <https://cn-sandbox-2.test.dataone.org/cn/v2/resolve/execution_e859d2dd-c5e6-4ec6-892f-1b00bb6f8f65>
   ns2:qualifiedAssociation <https://cn-sandbox-2.test.dataone.org/cn/v2/resolve/association_948c5df1-0e4c-4bf0-a08b-8cc8f17d1cde> ;
@@ -321,8 +321,7 @@ Future work of the current provenance tools include: (1) solve the broken link u
 <https://cn-sandbox-2.test.dataone.org/cn/v2/resolve/program_014c5a89-011b-4125-bdb5-af0475020e1a>
   dcterms:identifier "program_014c5a89-011b-4125-bdb5-af0475020e1a"^^<http://www.w3.org/2001/XMLSchema#string> ;
   a ore:AggregatedResource ;
-  ore:isAggregatedBy "https://cn-sandbox-2.test.dataone.org/cn/v1/resolve/resourceMap_e859d2dd-c5e6-4ec6-892f-1b00bb6f8f65.rdf#aggregation" , 
-                             <https://cn-sandbox-2.test.dataone.org/cn/v1/resolve/resourceMap_e859d2dd-c5e6-4ec6-892f-1b00bb6f8f65.rdf#aggregation> ;
+  ore:isAggregatedBy "https://cn-sandbox-2.test.dataone.org/cn/v1/resolve/resourceMap_e859d2dd-c5e6-4ec6-892f-1b00bb6f8f65.rdf#aggregation" , <https://cn-sandbox-2.test.dataone.org/cn/v1/resolve/resourceMap_e859d2dd-c5e6-4ec6-892f-1b00bb6f8f65.rdf#aggregation> ;
   a ns1:Program ;
   ns3:isDocumentedBy <https://cn-sandbox-2.test.dataone.org/cn/v2/resolve/metadata_e859d2dd-c5e6-4ec6-892f-1b00bb6f8f65.xml> .
 
