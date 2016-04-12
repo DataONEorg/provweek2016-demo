@@ -29,11 +29,9 @@ linkcolor=blue,
 %\usepackage{tikzscale}
 %\usepackage{filecontents} 
 \usepackage{subfig}
-\usepackage[font=small]{caption}
-
+\usepackage[font=small, belowskip=-20pt, aboveskip=0pt ]{caption}
 \usepackage{times}
 
-\usepackage{color}
 
 \newcommand{\mypara}[1]{\vspace{4pt}\noindent\textbf{#1}}
 \newcommand{\mytt}[1]{\ensuremath{\mathtt{#1}}}
@@ -48,6 +46,10 @@ linkcolor=blue,
     }
     \end{center}
 }
+
+\linespread{0.9}
+
+
 \begin{document}
 
 \mainmatter  % start of an individual contribution
@@ -116,7 +118,7 @@ The second is a script annotation tool, which we call YesWorkflow \cite{yesworkf
 
 We introduce the provenance and search features of DataONE by means of an example involving three earth scientists who interact through a DataONE MN, as shown in Fig.~\ref{fig0}.  As shown at the top of Fig.~\ref{fig0}, Alice has developed a script for producing Carbon3/Carbon4 soil maps.  She uses the YesWorkflow (YW) tool to mark-up the script and expose the underlying workflow view (i.e., prospective provenance) that is inherent in her soil mapping code as shown in Fig.\ref{fig2}. 
 
-\begin{figure}[t] \centering \includegraphics[width=0.4\textwidth]{figs/alice-bob-charlie-sequence-crop} \caption{Run Manager Demonstration: (1) Alice runs \mytt{script.m} with the DataONE Run Manager to create data package $P_A$, which she publishes to the DataONE network; (2) Bob later finds and downloads Alice's data, uses it in his \mytt{analysis.m}, creating and then publishing package $P_B$; (3) Charlie searches DataONE, finds Bob's $P_B$, and recognizes its dependence on Alice's $P_A$.}  \label{fig0} \end{figure}
+\begin{figure}[h] \vspace{6pt} \centering \includegraphics[width=0.4\textwidth]{figs/alice-bob-charlie-sequence-crop} \caption{Run Manager Demonstration: (1) Alice runs \mytt{script.m} with the DataONE Run Manager to create data package $P_A$, which she publishes to the DataONE network; (2) Bob later finds and downloads Alice's data, uses it in his \mytt{analysis.m}, creating and then publishing package $P_B$; (3) Charlie searches DataONE, finds Bob's $P_B$, and recognizes its dependence on Alice's $P_A$.}  \label{fig0} \vspace{6pt} \end{figure}
 
 By using the \emph{Run Manager} to run her script, Alice not only obtains the expected results, but she also captures their provenance, compliant with DataONE's ProvONE data model. 
 ProvONE~\cite{provone} is an extension of the W3C PROV-O~\cite{prov-o} standard for representing provenance, and includes specializations for representing both retrospective provenance about the runtime execution and prospective provenance about the structure and flow of the analytical script or workflow.
@@ -124,9 +126,10 @@ ProvONE~\cite{provone} is an extension of the W3C PROV-O~\cite{prov-o} standard 
 At the end of the experimentation phase, Alice is ready to publish her results to a DataONE MN. 
 To do so, she uses the  DataONE Matlab tool to automatically generate a DataONE-compliant data package in OAI-ORE format, including the ProvONE provenance document, the script itself, and its YW-generated workflow view. 
 
-\begin{figure}[t]
+\begin{figure}[h]
+\vspace{6pt}
 \centering   
-\includegraphics[width=0.8\textwidth]{figs/abc-crop}
+\includegraphics[width=0.75\textwidth]{figs/abc-crop}
 \caption{Charlie's view on the DataONE demo site: (1) A YesWorkflow model for Alice's soil processing script; (2) Data lineage from Bob's results back through his script inputs to Alice's data package; (3) Two visualizations produced by Bob's water use efficiency analysis script.}
 \label{fig2}
 \end{figure}
@@ -138,10 +141,9 @@ Specifically, the \mytt{MemberNode.get}(session, id)  call, available from the M
 %
 Note that, if Bob create a new identifier when he downloads Alice's data, the link between two data packages would be broken, leading to a disconnect in provenance and requiring additional ``stitching'' operations~\cite{missing-link}.  
 
-Instead, by retaining the same identifier throughout, the tool implicitly establishes a connection between Alice's work and Bob's, namely by adding a provenance statement of the form (Bob's\_execution, \emph{prov:used}, Alice's\_data\_id). Bob then proceeds to operate on the data using the DatAONE Matlab just like Alice did, eventually publishing a new data package with his own results and their provenance.
+Instead, by retaining the same identifier throughout, the tool implicitly establishes a connection between Alice's work and Bob's, namely by adding a provenance statement of the form (Bob's\_execution, \emph{prov:used}, Alice's\_data\_id). Bob then proceeds to operate on the data using the DataONE Matlab just like Alice did, eventually publishing a new data package with his own results and their provenance.
 At this point, the two provenance documents are physically disjoint, as they reside in different data packages, but they are logically connected, namely through the used() statement mentioned above.
 As they are both indexed by the CN upon publication of the data package, this logical connection emerges automatically when a third party, such as Charlie in our example, explores one of the two data packages.
-
 
 Charlie discovers Bob's data packages on DataONE and is able to navigate back to the data that Bob used, i.e., Alice's data package depicted in Fig.~\ref{fig2}~\cite{Katz,data-trajectories}. When he searches the DataONE network using the same keyword ``grass'' from the web search interface, two data packages are displayed as shown in Fig.~\ref{fig2}, namely Alice's and Bob's. 
 One data package is created by ``Alice'' \cite{yaxing}, the other is created by ``Bob'' \cite{christopher}. 
@@ -151,20 +153,16 @@ Crucially, the provenance of the two datasets is now manifested visually along w
 
 Provenance details for any input or output in the provenance graph can be viewed by clicking on the icon shown in the figure. DataONE Search also provides human language descriptions of how data are used or generated via the script and models, and provides navigation to ancestors and descendants in the data derivation chain. 
 %
-In this example, Charlie quickly learns that Alice's script (C3\_C4\_map\_present\_with\_comments.m) takes twenty-five input files and produces six outputs, shown on the left and right side of Alice's data package, respectively. The bottom three outputs in Alice's data package are the NetCDF data files that represent three different world map grids of percentage of grass types (C3 grass fraction, C4 grass fraction, and total grass fraction). In addition, a model graph is displayed at the intermediate layer that was generated by the YesWorkflow tool~\cite{yesworkflow}. Alice's used embedded YesWorkflow annotations to document her script. These annotations declare step by step how data are used and derived in the script. 
-
-Similarly, from the provenance information associated with Bob's data package in Fig.~\ref{fig2}, we see that it takes eight inputs, and produces two visualizations. By viewing the details for each input, we can see that three of them are the outputs produced by Alice's data package.  
+In this example, Charlie quickly learns that Alice's script (C3\_C4\_map\_present\_with\_comments.m) takes twenty-five input files and produces six outputs, shown on the left and right side of Alice's data package, respectively. The bottom three outputs in Alice's data package are the NetCDF data files that represent three different world map grids of percentage of grass types (C3 grass fraction, C4 grass fraction, and total grass fraction). In addition, a model graph is displayed at the intermediate layer that was generated by the YesWorkflow tool declaring step by step how data are used and derived in the script~\cite{yesworkflow}. Similarly, the provenance information is associated with Bob's data package in Fig.~\ref{fig2}~\cite{dataone-prov-tech-report-2016}.
 
 
+\section{Conclusions}
 
-
-\section{Conclusion}
-
-This paper demonstrates a notable new feature (provenance capture and search) of DataONE. DataONE has released the DataONE Search for public use in November 2015, and the R and Matlab provenance tool to the public in 2016. Future work of the current provenance tools include: (1) solve the broken link use case; (2) support more I/O functions; (3) handle complex scenarios such as multiple runs of a script and multiple users; (4) variable-level provenance capture warrants further investigation and efforts.
-%Maintaining the link between Alice's work and Bob's subsequent work is worth discussion. Currently, Bob must use certain functions provided by DataONE to ensure the provenance link to Alice's work is correctly maintained. There are other possible ways to achieve the same goal. For example,  Bob might download Alice's data and manually add the links to Alice's work back into his data package before sharing via DataONE. A \emph{prov:was\_derived\_from} statement that local data copy for Bob is derived from Alice's data could easily add, especially for historical data for which provenance was not captured at the time data were generated.  The new provenance tools described in this demonstration allow efficient capture of machine-parseable provenance information using analytical tools commonly used in the environmental sciences (e.g., Matlab), thereby significantly improving the replicability of research in the environmental sciences.
+This paper demonstrates a notable new feature (provenance capture and search) of DataONE. DataONE has released the DataONE Search for public use in November 2015, and the R and Matlab provenance tool to the public in 2016. Future work of the current provenance tools include: (1) support more I/O functions; (2) handle complex scenarios such as multiple runs of a script and multiple users; (3) variable-level provenance capture warrants further investigation and efforts.
 
 
 \bibliography{references}
 \bibliographystyle{splncs03}
+
 
 \end{document}
