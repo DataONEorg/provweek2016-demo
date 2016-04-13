@@ -173,7 +173,7 @@ We introduce the provenance and search features of DataONE by means of an exampl
 
 As shown at the top of Fig.~\ref{fig0}, Alice has developed a script for producing Carbon3/Carbon4 soil maps.  She uses the YesWorkflow (YW) tool to mark-up the script and expose the underlying workflow view (i.e., prospective provenance) that is inherent in her soil mapping code as shown in Fig.\ref{yw-graph}. 
 
-\begin{figure}[t] \centering \includegraphics[width=0.4\textwidth]{figs/alice-bob-charlie-sequence-crop} \caption{Run Manager Demonstration: (1) Alice runs \mytt{script.m} with the DataONE Run Manager to create data package $P_A$, which she publishes to the DataONE network; (2) Bob later finds and downloads Alice's data, uses it in his \mytt{analysis.m}, creating and then publishing package $P_B$; (3) Charlie searches DataONE, finds Bob's $P_B$, and recognizes its dependence on Alice's $P_A$.}  \label{fig0} \end{figure}
+\begin{figure}[t] \centering \includegraphics[width=0.6\textwidth]{figs/alice-bob-charlie-sequence-crop} \caption{Run Manager Demonstration: (1) Alice runs \mytt{script.m} with the DataONE Run Manager to create data package $P_A$, which she publishes to the DataONE network; (2) Bob later finds and downloads Alice's data, uses it in his \mytt{analysis.m}, creating and then publishing package $P_B$; (3) Charlie searches DataONE, finds Bob's $P_B$, and recognizes its dependence on Alice's $P_A$.}  \label{fig0} \end{figure}
 
 \begin{figure}[!h] \centering \includegraphics[width=1.05\textwidth]{figs/C3_C4_map_present_NA_workflow_comb_diagram} \caption{A combined view of the YesWorkflow model for Alice's soil processing scripts.}  \label{yw-graph} \end{figure}
 
@@ -187,6 +187,8 @@ At the end of the experimentation phase, Alice is ready to publish her results t
 To do so, she uses the  DataONE Matlab tool to automatically generate a DataONE-compliant data package in OAI-ORE format, including the ProvONE provenance document, the script itself, and its YW-generated workflow view. A partial ProvONE provenance statements included in the uploaded Alice's data package in List~\ref{list1} in the Appendix.
 
 %\begin{figure}[!h] \centering \includegraphics[width=1.7\textwidth]{figs/alice-ttl} \caption{ProvONE provenance statements included in the uploaded Alice's data package}  \label{list1} \end{figure}
+
+Moreover, a YW-MATLAB module~\cite{yw-matlab} was developed to answer prospective and retrospective queries from provenance captured by YW and Run Manager. It contains a YW module and command line tools for interacting with the DataONE MATLAB RunManager~\cite{matlabdataone}. These tools make the recorded run-time data provenance available to YW so that this retrospective provenance information can be queried in terms of, and in combination with, the prospective provenance revealed by YW annotations in the MATLAB scripts.
 
 
 \subsection{Bob's Data Reuse}
@@ -229,7 +231,7 @@ Similarly, from the provenance information associated with Bob's data package in
 
 \begin{figure}[t]
 \centering   
-\includegraphics[width=0.6\textwidth]{figs/ab-crop}
+\includegraphics[width=0.7\textwidth]{figs/ab-crop}
 \caption{DataONE Search result for keyword  ``grass'' (DataONE Search demonstration site). The ``fork'' icon indicates data packages having embedded provenance.}
 \label{fig1}
 \end{figure}
