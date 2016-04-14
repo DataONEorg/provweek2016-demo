@@ -70,7 +70,7 @@ frame=single
 
 % \author{Yang Cao\inst{1} \and Christopher Jones\inst{2} \and V\'ictor Cuevas-Vicentt\'in\inst{3} \and Steve Aulenbach\inst{4} \and Matthew B.\ Jones\inst{2} \and Bertram Lud\"ascher\inst{1} \and Timothy McPhillips\inst{1} \and Paolo Missier\inst{5} \and  Christopher Schwalm\inst{6} \and Peter Slaughter\inst{2} \and Dave Vieglais\inst{2} \and Lauren Walker\inst{2} \and Yaxing Wei\inst{7}}
 
-\author{Yang Cao\inst{1},  Christopher Jones\inst{2},  V\'ictor Cuevas-Vicentt\'in\inst{3}, Matthew B.\ Jones\inst{2},  Bertram Lud\"ascher\inst{1},  Timothy McPhillips\inst{1},  Paolo Missier\inst{5},   Christopher Schwalm\inst{6},  Peter Slaughter\inst{2},  Dave Vieglais\inst{2},  Lauren Walker\inst{2}, Yaxing~Wei\inst{7}}
+\author{Yang Cao\inst{1},  Christopher Jones\inst{2},  V\'ictor Cuevas-Vicentt\'in\inst{3}, Matthew B.\ Jones\inst{2},  Bertram Lud\"ascher\inst{1},  Timothy McPhillips\inst{1},  Paolo Missier\inst{4},   Christopher Schwalm\inst{5},  Peter Slaughter\inst{2},  Dave Vieglais\inst{6},  Lauren Walker\inst{2}, Yaxing~Wei\inst{7}}
 
 
 \institute{Library and Information Science, University of Illinois, Urbana-Champaign, IL\\
@@ -83,7 +83,10 @@ School of Computing Science, Newcastle  University, UK \\
 \and
 Woods Hole Research Center, Falmouth, MA \\
 \and
-Environmental Sciences Division, Oak Ridge National Laboratory, TN}
+University of Kansas, Lawrence, KS \\
+\and
+Environmental Sciences Division, Oak Ridge National Laboratory, TN 
+}
 
 
 
@@ -184,7 +187,7 @@ By using the \emph{Run Manager} to run her script, Alice not only obtains the ex
 ProvONE~\cite{provone} is an extension of the W3C PROV-O~\cite{prov-o} standard for representing provenance, and includes specializations for representing both retrospective provenance about the runtime execution and prospective provenance about the structure and flow of the analytical script or workflow.
 %
 At the end of the experimentation phase, Alice is ready to publish her results to a DataONE MN. 
-To do so, she uses the  DataONE Matlab tool to automatically generate a DataONE-compliant data package in OAI-ORE format, including the ProvONE provenance document, the script itself, and its YW-generated workflow view. A partial ProvONE provenance statements included in the uploaded Alice's data package in List~\ref{list1} in the Appendix.
+To do so, she uses the  DataONE Matlab tool to automatically generate a DataONE-compliant data package in OAI-ORE format, including the ProvONE provenance document, the script itself, and its YW-generated workflow view. Partial ProvONE provenance statements included in the uploaded Alice's data package are provided in List~\ref{list1} of the Appendix.
 
 %\begin{figure}[!h] \centering \includegraphics[width=1.7\textwidth]{figs/alice-ttl} \caption{ProvONE provenance statements included in the uploaded Alice's data package}  \label{list1} \end{figure}
 
@@ -255,7 +258,7 @@ Similarly, from the provenance information associated with Bob's data package in
 
 This paper demonstrates a notable new feature (provenance capture and search) of DataONE. DataONE has released the DataONE Search for public use in November 2015, and the R and Matlab provenance tool to the public in 2016. 
 
-Maintaining the link between Alice's work and Bob's subsequent work is worth discussion. Currently, Bob must use certain functions provided by DataONE to ensure the provenance link to Alice's work is correctly maintained. There are other possible ways to achieve the same goal. For example,  Bob might download Alice's data and manually add the links to Alice's work back into his data package before sharing via DataONE. A \emph{prov:was\_derived\_from} statement that local data copy for Bob is derived from Alice's data could easily add, especially for historical data for which provenance was not captured at the time data were generated.  The new provenance tools described in this demonstration allow efficient capture of machine-parseable provenance information using analytical tools commonly used in the environmental sciences (e.g., Matlab), thereby significantly improving the replicability of research in the environmental sciences.
+Maintaining the link between Alice's work and Bob's subsequent work is worth discussion. Currently, Bob must use certain functions provided by DataONE to ensure the provenance link to Alice's work is correctly maintained. There are other possible ways to achieve the same goal. For example,  Bob might download Alice's data and manually add the links to Alice's work back into his data package before sharing via DataONE. A \emph{prov:was\_derived\_from} statement indicating that local data copy for Bob is derived from Alice's data could easily add, especially for historical data for which provenance was not captured at the time data were generated.  The new provenance tools described in this demonstration allow efficient capture of machine-parseable provenance information using analytical tools commonly used in the environmental sciences (e.g., Matlab), thereby significantly improving the replicability of research in the environmental sciences.
 
 
 Future work of the current provenance tools include: (1) solve the broken link use case; (2) support more I/O functions; (3) handle complex scenarios such as multiple runs of a script and multiple users; (4) variable-level provenance capture warrants further investigation and efforts.
