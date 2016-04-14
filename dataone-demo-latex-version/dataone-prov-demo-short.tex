@@ -33,6 +33,8 @@ linkcolor=blue,
 \usepackage{times}
 
 
+
+
 \newcommand{\mypara}[1]{\vspace{4pt}\noindent\textbf{#1}}
 \newcommand{\mytt}[1]{\ensuremath{\mathtt{#1}}}
 
@@ -59,7 +61,7 @@ linkcolor=blue,
 
 % \author{Yang Cao\inst{1} \and Christopher Jones\inst{2} \and V\'ictor Cuevas-Vicentt\'in\inst{3} \and Steve Aulenbach\inst{4} \and Matthew B.\ Jones\inst{2} \and Bertram Lud\"ascher\inst{1} \and Timothy McPhillips\inst{1} \and Paolo Missier\inst{5} \and  Christopher Schwalm\inst{6} \and Peter Slaughter\inst{2} \and Dave Vieglais\inst{2} \and Lauren Walker\inst{2} \and Yaxing Wei\inst{7}}
 
-\author{Yang Cao\inst{1},  Christopher Jones\inst{2},  V\'ictor Cuevas-Vicentt\'in\inst{3}, Matthew B.\ Jones\inst{2},  Bertram Lud\"ascher\inst{1},  Timothy McPhillips\inst{1},  Paolo Missier\inst{4},   Christopher Schwalm\inst{5},  Peter Slaughter\inst{2},  Dave Vieglais\inst{6},  Lauren Walker\inst{2}, Yaxing~Wei\inst{7}}
+\author{Yang Cao\inst{1},  Christopher Jones\inst{2},  V\'ictor Cuevas-Vicentt\'in\inst{3}, Matthew B.\ Jones\inst{2},  Bertram Lud\"ascher\inst{1},  Timothy McPhillips\inst{1},  Paolo Missier\inst{4},   Christopher Schwalm\inst{5},  Peter Slaughter\inst{2},  Dave Vieglais\inst{6},  Lauren Walker\inst{2}, Yaxing~Wei\inst{7} \footnotemark[1]}
 
 
 \institute{Library and Information Science, University of Illinois, Urbana-Champaign, IL\\
@@ -117,7 +119,7 @@ In this demonstration we describe two features related to provenance.
 The first is an API for capturing \textit{retrospective} provenance from R \cite{recordr} and Matlab \cite{matlabdataone} script executions, called \emph{Run Manager}.
 The second is a script annotation tool, which we call YesWorkflow \cite{yesworkflow}, designed to help developers and users better understand the structure and intent of a script.
 
-We introduce the provenance and search features of DataONE by means of an example involving three earth scientists who interact through a DataONE MN, as shown in Fig.~\ref{fig0}.  As shown at the top of Fig.~\ref{fig0}, Alice has developed a script for producing Carbon3/Carbon4 soil maps.  She uses the YesWorkflow (YW) tool to mark-up the script and expose the underlying workflow view (i.e., prospective provenance) that is inherent in her soil mapping code as shown in Fig.\ref{fig2}. 
+We introduce the provenance and search features of DataONE by means of an example involving three earth scientists who interact through a DataONE MN, as shown in Fig.~\ref{fig0}.  As shown at the top of Fig.~\ref{fig0}, Alice has developed a script for producing Carbon3/Carbon4 soil maps~\cite{MsTMIP-model-driver-data-set}.  She uses the YesWorkflow (YW) tool to mark-up the script and expose the underlying workflow view (i.e., prospective provenance) that is inherent in her soil mapping code as shown in Fig.\ref{fig2}. 
 
 \begin{figure}[h] \vspace{6pt} \centering \includegraphics[width=0.4\textwidth]{figs/alice-bob-charlie-sequence-crop} \caption{Run Manager Demonstration: (1) Alice runs \mytt{script.m} with the DataONE Run Manager to create data package $P_A$, which she publishes to the DataONE network; (2) Bob later finds and downloads Alice's data, uses it in his \mytt{analysis.m}, creating and then publishing package $P_B$; (3) Charlie searches DataONE, finds Bob's $P_B$, and recognizes its dependence on Alice's $P_A$.}  \label{fig0} \vspace{6pt} \end{figure}
 
@@ -136,7 +138,7 @@ To do so, she uses the  DataONE Matlab tool to automatically generate a DataONE-
 \end{figure}
 
 Bob's interaction with DataONE begins with a user interface search, i.e., using the keyword ``grass'', he discovers Alice's data package, amongst others. 
-He decides to use three NetCDF output data files which are part of the package, as input to his Grassland Water Use Efficiency Analysis script . 
+He decides to use three NetCDF output data files which are part of the package, as input to his Grassland Water Use Efficiency Analysis script~\cite{MsTMIP-model-output-data-set}. 
 Having identified the data of interest in the MN, Bob uses its public identifier \textit{id} to retrieve it and use it in his own code (GrasslandWUE.m).
 Specifically, the \mytt{MemberNode.get}(session, id)  call, available from the Matlab Toolbox, not only correctly retrieves Alice's data package, but it also ensures that the download event is recorded as part of a new provenance document, associated to Bob's analysis.
 %
@@ -154,7 +156,7 @@ Crucially, the provenance of the two datasets is now manifested visually along w
 
 Provenance details for any input or output in the provenance graph can be viewed by clicking on the icon shown in the figure. DataONE Search also provides human language descriptions of how data are used or generated via the script and models, and provides navigation to ancestors and descendants in the data derivation chain. 
 %
-In this example, Charlie quickly learns that Alice's script (C3\_C4\_map\_present\_with\_comments.m) takes twenty-five input files and produces six outputs, shown on the left and right side of Alice's data package, respectively. The bottom three outputs in Alice's data package are the NetCDF data files that represent three different world map grids of percentage of grass types (C3 grass fraction, C4 grass fraction, and total grass fraction). In addition, a model graph is displayed at the intermediate layer that was generated by the YesWorkflow tool declaring step by step how data are used and derived in the script~\cite{yesworkflow}. Similarly, the provenance information is associated with Bob's data package in Fig.~\ref{fig2}~\cite{dataone-prov-tech-report-2016}.
+In this example, Charlie quickly learns that Alice's script (C3\_C4\_map\_present\_with\_comments.m) takes twenty-five input files~\cite{MsTMIP-model-driver-data-set} and produces six outputs, shown on the left and right side of Alice's data package, respectively. The bottom three outputs in Alice's data package are the NetCDF data files that represent three different world map grids of percentage of grass types (C3 grass fraction, C4 grass fraction, and total grass fraction)~\cite{MsTMIP-model-driver-data-set}. In addition, a model graph is displayed at the intermediate layer that was generated by the YesWorkflow tool declaring step by step how data are used and derived in the script~\cite{yesworkflow}. Similarly, the provenance information is associated with Bob's data package in Fig.~\ref{fig2}~\cite{dataone-prov-tech-report-2016}~\cite{MsTMIP-model-output-data-set}.
 
 
 \section{Conclusions}
