@@ -29,7 +29,7 @@ linkcolor=blue,
 %\usepackage{tikzscale}
 %\usepackage{filecontents} 
 \usepackage{subfig}
-\usepackage[font=small, belowskip=-20pt, aboveskip=0pt ]{caption}
+\usepackage[font=footnotesize, belowskip=-20pt, aboveskip=1pt ]{caption}
 \usepackage{times}
 
 
@@ -61,10 +61,10 @@ linkcolor=blue,
 
 % \author{Yang Cao\inst{1} \and Christopher Jones\inst{2} \and V\'ictor Cuevas-Vicentt\'in\inst{3} \and Steve Aulenbach\inst{4} \and Matthew B.\ Jones\inst{2} \and Bertram Lud\"ascher\inst{1} \and Timothy McPhillips\inst{1} \and Paolo Missier\inst{5} \and  Christopher Schwalm\inst{6} \and Peter Slaughter\inst{2} \and Dave Vieglais\inst{2} \and Lauren Walker\inst{2} \and Yaxing Wei\inst{7}}
 
-\author{Yang Cao\inst{1},  Christopher Jones\inst{2},  V\'ictor Cuevas-Vicentt\'in\inst{3}, Matthew B.\ Jones\inst{2},  Bertram Lud\"ascher\inst{1},  Timothy McPhillips\inst{1},  Paolo Missier\inst{4},   Christopher Schwalm\inst{5},  Peter Slaughter\inst{2},  Dave Vieglais\inst{6},  Lauren Walker\inst{2}, Yaxing~Wei\inst{7} \footnotemark[1]}
+\author{\small{Yang Cao\inst{1},  Christopher Jones\inst{2},  V\'ictor Cuevas-Vicentt\'in\inst{3}, Matthew B.\ Jones\inst{2},  Bertram Lud\"ascher\inst{1},  Timothy McPhillips\inst{1},  Paolo Missier\inst{4},   Christopher Schwalm\inst{5},  Peter Slaughter\inst{2},  Dave Vieglais\inst{6},  Lauren Walker\inst{2}, Yaxing~Wei\inst{7} }}
 
 
-\institute{Library and Information Science, University of Illinois, Urbana-Champaign, IL\\
+\institute{\small{Library and Information Science, University of Illinois, Urbana-Champaign, IL\\
 \and
 National Center for Ecological Analysis and Synthesis, UCSB, CA \\
 \and
@@ -77,6 +77,7 @@ Woods Hole Research Center, Falmouth, MA \\
 University of Kansas, Lawrence, KS \\
 \and
 Environmental Sciences Division, Oak Ridge National Laboratory, TN 
+}
 }
 
 
@@ -93,13 +94,11 @@ Environmental Sciences Division, Oak Ridge National Laboratory, TN
 \tocauthor{Authors' Instructions}
 \maketitle
 
-
 \begin{abstract}
+
   DataONE is a federated data network focusing on earth and environmental science data. We demonstrate the provenance and search features of DataONE by means of an example involving three earth scientists who interact through a DataONE Member Node. DataONE provenance systems enable reproducible research and facilitate proper attribution of scientific results transitively across generations of derived data products.  
   \end{abstract}
 
-% \keywords{We would like to encourage you to list your keywords within
-% the abstract section}
 
 
 
@@ -115,13 +114,12 @@ DataONE (Data Observation Network for Earth) is a federated data network and a s
 
 \section{Demonstration Description}  \label{demo}
 
-In this demonstration we describe two features related to provenance. 
-The first is an API for capturing \textit{retrospective} provenance from R \cite{recordr} and Matlab \cite{matlabdataone} script executions, called \emph{Run Manager}.
-The second is a script annotation tool, which we call YesWorkflow \cite{yesworkflow}, designed to help developers and users better understand the structure and intent of a script.
+In this demonstration we describe two features related to provenance: (1) an API for capturing \textit{retrospective} provenance from R \cite{recordr} and Matlab \cite{matlabdataone} script executions, called \emph{Run Manager}; (2) a script annotation tool, called YesWorkflow \cite{yesworkflow}, designed to help developers and users better understand the structure and intent of a script.
 
 We introduce the provenance and search features of DataONE by means of an example involving three earth scientists who interact through a DataONE MN, as shown in Fig.~\ref{fig0}.  At the top of Fig.~\ref{fig0}, Alice has developed a script for producing Carbon3/Carbon4 soil maps~\cite{MsTMIP-model-driver-data-set}.  She uses the YesWorkflow (YW) tool to mark-up the script and expose the underlying workflow view (i.e., prospective provenance) that is inherent in her soil mapping code as shown in Fig.\ref{fig2}. 
 
-\begin{figure}[h] \vspace{6pt} \centering \includegraphics[width=0.4\textwidth]{figs/alice-bob-charlie-sequence-crop} \caption{Run Manager Demonstration: (1) Alice runs \mytt{script.m} with the DataONE Run Manager to create data package $P_A$, which she publishes to the DataONE network; (2) Bob later finds and downloads Alice's data, uses it in his \mytt{analysis.m}, creating and then publishing package $P_B$; (3) Charlie searches DataONE, finds Bob's $P_B$, and recognizes its dependence on Alice's $P_A$.}  \label{fig0} \vspace{6pt} \end{figure}
+\vspace{-0.2in}
+\begin{figure}[h]  \centering \includegraphics[width=0.4\textwidth]{figs/alice-bob-charlie-sequence-crop} \caption{Run Manager Demonstration: (1) Alice runs \mytt{script.m} with the DataONE Run Manager to create data package $P_A$, which she publishes to the DataONE network; (2) Bob later finds and downloads Alice's data, uses it in his \mytt{analysis.m}, creating and then publishing package $P_B$; (3) Charlie searches DataONE, finds Bob's $P_B$, and recognizes its dependence on Alice's $P_A$.}  \label{fig0} \vspace{6pt} \end{figure}
 
 By using the \emph{Run Manager} to run her script, Alice not only obtains the expected results, but she also captures their provenance, compliant with DataONE's ProvONE data model. 
 ProvONE~\cite{provone} is an extension of the W3C PROV-O~\cite{prov-o} standard for representing provenance, and includes specializations for representing both retrospective provenance about the runtime execution and prospective provenance about the structure and flow of the analytical script or workflow.
@@ -129,13 +127,14 @@ ProvONE~\cite{provone} is an extension of the W3C PROV-O~\cite{prov-o} standard 
 At the end of the experimentation phase, Alice is ready to publish her results to a DataONE MN. 
 To do so, she uses the  DataONE Matlab tool to automatically generate a DataONE-compliant data package in OAI-ORE format, including the ProvONE provenance document, the script itself, and its YW-generated workflow view. 
 
+
 \begin{figure}[h]
-\vspace{6pt}
 \centering   
 \includegraphics[width=0.75\textwidth]{figs/abc-crop}
 \caption{Charlie's view on the DataONE demo site: (1) A YesWorkflow model for Alice's soil processing script; (2) Data lineage from Bob's results back through his script inputs to Alice's data package; (3) Two visualizations produced by Bob's water use efficiency analysis script.}
 \label{fig2}
 \end{figure}
+
 
 Bob's interaction with DataONE begins with a user interface search, i.e., using the keyword ``grass'', he discovers Alice's data package, amongst others. 
 He decides to use three NetCDF output data files which are part of her package, as input to his Grassland Water Use Efficiency Analysis script~\cite{MsTMIP-model-output-data-set}. 
@@ -161,9 +160,9 @@ In this example, Charlie quickly learns that Alice's script (C3\_C4\_map\_presen
 
 This paper demonstrates a notable new feature (provenance capture and search) of DataONE. DataONE has released the DataONE Search for public use in November 2015, and the R and Matlab provenance tool to the public in 2016. Future work of the current provenance tools include: (1) support more I/O functions; (2) handle complex scenarios such as multiple runs of a script and multiple users; (3) variable-level provenance capture warrants further investigation and efforts.
 
-
+\begin{small}
 \bibliography{references}
 \bibliographystyle{splncs03}
-
+\end{small}
 
 \end{document}
