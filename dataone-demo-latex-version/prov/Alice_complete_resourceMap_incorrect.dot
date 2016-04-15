@@ -1,4 +1,4 @@
-digraph PROV { size="16,12"; rankdir="BT"; 
+digraph PROV { size="16,12"; rankdir="LR"; 
 n67235ce3_662e_4f13_b087_1bd82b450cb2 -> nf23d5dcf_d8ed_49b0_944c_7643a12c9827 [labelfontsize="8",labeldistance="1.5",labelangle="60.0",rotation="20",taillabel="der"]
 n67235ce3_662e_4f13_b087_1bd82b450cb2 -> n7ffb247d_cf5d_4536_b53a_3538f8075480 [labelfontsize="8",labeldistance="1.5",labelangle="60.0",rotation="20",taillabel="der"]
 n67235ce3_662e_4f13_b087_1bd82b450cb2 -> naeb55205_34c8_4ddf_8a28_46e8e951a3cc [labelfontsize="8",labeldistance="1.5",labelangle="60.0",rotation="20",taillabel="der"]
