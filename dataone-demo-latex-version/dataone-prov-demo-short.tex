@@ -127,7 +127,6 @@ In this demonstration we describe two features related to provenance: (1) an API
 
 We introduce the provenance and search features of DataONE by means of an example involving three earth scientists who interact through a DataONE MN, as shown in Fig.~\ref{fig0}.  At the top of Fig.~\ref{fig0}, Alice has developed a script for producing Carbon3/Carbon4 soil maps~\cite{MsTMIP-model-driver-data-set}.  She uses the YesWorkflow (YW) tool to mark-up the script and expose the underlying workflow view (i.e., prospective provenance) that is inherent in her soil mapping code as shown in Fig.\ref{fig2}. 
 
-%\vspace{-0.2in}
 \begin{figure}[t]  
 \centering 
 \includegraphics[width=0.45\textwidth]{figs/alice-bob-charlie-sequence-crop} \caption{Run Manager Demonstration: (1) Alice runs \mytt{script.m} with the DataONE Run Manager to create data package $P_A$, which she publishes to the DataONE network; (2) Bob later finds and downloads Alice's data, uses it in his \mytt{analysis.m}, creating and then publishing package $P_B$; (3) Charlie searches DataONE, finds Bob's $P_B$, and recognizes its dependence on Alice's $P_A$.}  \label{fig0} 
