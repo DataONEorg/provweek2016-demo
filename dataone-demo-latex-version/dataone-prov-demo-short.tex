@@ -32,6 +32,7 @@ linkcolor=blue,
 \usepackage[font=footnotesize, belowskip=-20pt, aboveskip=1pt ]{caption}
 \usepackage{times}
 
+\usepackage{color}
 
 
 
@@ -179,5 +180,27 @@ In this example, Charlie quickly learns that Alice's script \code{C3\_C4\_map\_p
 \bibliography{references}
 \bibliographystyle{splncs03}
 %\end{small}
+
+\begin{appendix}
+  \section{Poster Overview (\textcolor{red}{will be removed for the CR version)}}
+
+
+We plan to have the following panels/components in the poster:
+\begin{enumerate}
+\item The Problem: Need better support for transparency and reproducibility
+\item The Example/Use Case: C3/C4 carbon soil maps
+\item The Idea: Employ provenance (prospective and retrospective) 
+\item The Approach :
+  \begin{enumerate}
+  \item Use MATLAB and/or R provenance recorders (for retrospective provenance)
+  \item Use YesWorkflow (for prospective provenance)
+\end{enumerate}
+\item The Architecture: DataONE Member Nodes, Coordinating Nodes, Investigator Toolkit
+\item The Findings/Results: First large data-federation project to support provenance capture for improved transparency and reproducibility; providing transitive credit (Charlie acknowledging not just Bob, but also Alice).
+\end{enumerate}
+
+  
+\end{appendix}
+
 
 \end{document}
