@@ -99,8 +99,6 @@ Christopher Jones\inst{2},  V\'ictor Cuevas-Vicentt\'in\inst{3}, Matthew B.\ Jon
 % }
 
 
-
-
 %
 % NB: a more complex sample for affiliations and the mapping to the
 % corresponding authors can be found in the file "llncs.dem"
@@ -113,7 +111,7 @@ Christopher Jones\inst{2},  V\'ictor Cuevas-Vicentt\'in\inst{3}, Matthew B.\ Jon
 \maketitle
 
 \begin{abstract}
-  DataONE is a federated data network focusing on earth and environmental science data. We demonstrate the provenance and search features of DataONE by means of an example involving three earth scientists who interact through a DataONE Member Node. DataONE provenance systems enable reproducible research and facilitate proper attribution of scientific results transitively across generations of derived data products.
+  DataONE is a federated data network focusing on earth and environmental science data. We present the provenance and search features of DataONE by means of an example involving three earth scientists who interact through a DataONE Member Node. DataONE provenance systems enable reproducible research and facilitate proper attribution of scientific results transitively across generations of derived data products.
  \end{abstract}
 
 
@@ -128,18 +126,18 @@ DataONE (Data Observation Network for Earth) is a federated data network for ope
 \emph{Member Nodes} (MN) represent existing or new data repositories that support the DataONE Member Node API; \emph{Coordinating Nodes} (CN) serve the coordination and discovery needs of the network; and the \emph{Investigator Toolkit} which contains tools that enable programmatic interaction with DataONE infrastructure through a REST service API exposed by the CNs and MNs.
 
 
-\mypara{DataONE Search} is a web-based application that lets users seamlessly and efficiently discover publicly accessible data packages within the DataONE federated network of Member Node repositories. It allows users to search across space (geographical region), time, and using a set of keywords. Users sign in to DataONE Search using ORCID credentials, Google accounts, or institutional accounts. DataONE enables new user features like provenance-based browsing as part of its search facility. In the next section, we will demonstrate new DataONE provenance tools and the visualization of provenance with DataONE Search \cite{dataone}.
+\mypara{DataONE Search} is a web-based application that lets users seamlessly and efficiently discover publicly accessible data packages within the DataONE federated network of Member Node repositories. It allows users to search across space (geographical region), time, and using a set of keywords. Users sign in to DataONE Search using ORCID credentials, Google accounts, or institutional accounts. DataONE enables new user features like provenance-based browsing as part of its search facility. In the next section, we will present new DataONE provenance tools and the visualization of provenance with DataONE Search \cite{dataone}.
 
 
-\section{Demonstration Description}  \label{demo}
+\section{Provenance Feature Description}  \label{demo}
 
-We demonstrate two features related to provenance: \emph{Run Manager}, an API for capturing retrospective provenance from R \cite{recordr} and MATLAB \cite{matlabdataone} script runs; and \emph{YesWorkflow} \cite{yesworkflow}, a script annotation and provenance querying tool, designed to help users better understand the structure and intent of a script, and to expose and query its provenance.
+We present two features related to provenance: \emph{Run Manager}, an API for capturing retrospective provenance from R \cite{recordr} and MATLAB \cite{matlabdataone} script runs; and \emph{YesWorkflow} \cite{yesworkflow}, a script annotation and provenance querying tool, designed to help users better understand the structure and intent of a script, and to expose and query its provenance.
 
 We introduce the provenance and search features of DataONE by means of an example involving three Earth scientist personas who interact through a DataONE Member Node: In \Figref{fig0}, Alice has developed a script for producing C$_3$/C$_4$ carbon soil maps~\cite{MsTMIP-model-driver-data-set}.  She uses the YesWorkflow (YW) tool to mark-up the script and expose the underlying workflow view (i.e., prospective provenance) that is inherent in her soil mapping code as shown in \Figref{fig2}.
 
 \begin{figure}[t]  
 \centering 
-\includegraphics[width=0.45\textwidth]{figs/alice-bob-charlie-sequence-crop} \caption{Run Manager Demonstration: (1) Alice runs \code{script.m} with the DataONE Run Manager to create data package $P_A$, which she publishes to the DataONE network; (2) Bob later finds and downloads Alice's data, uses it in his \code{analysis.m}, creating and then publishing package $P_B$; (3) Charlie searches DataONE, finds Bob's $P_B$, and recognizes its dependence on Alice's $P_A$.}  \label{fig0} 
+\includegraphics[width=0.45\textwidth]{figs/alice-bob-charlie-sequence-crop} \caption{Provenance Use Case: (1) Alice runs \code{script.m} with the DataONE Run Manager to create data package $P_A$, which she publishes to the DataONE network; (2) Bob later finds and downloads Alice's data, uses it in his \code{analysis.m}, creating and then publishing package $P_B$; (3) Charlie searches DataONE, finds Bob's $P_B$, and recognizes its dependence on Alice's $P_A$.}  \label{fig0} 
 \end{figure}
 
 By using the \emph{Run Manager} to run her script, Alice not only obtains the expected results, but she also captures their provenance, compliant with DataONE's ProvONE data model. 
@@ -160,6 +158,7 @@ Bob's interaction with DataONE begins with a user interface search, i.e., using 
 %
 If Bob manually downloaded Alice's data (i.e., without using the DataONE tool), then the link between the data packages would likely be broken, leading to a disconnect in provenance and requiring additional ``stitching'' operations~\cite{missing-link}.
 
+
 Instead, by retaining the same identifier throughout, the tool implicitly establishes a connection between Alice's work and Bob's, namely by adding a provenance statement of the form (\emph{{Bob's\_execution}}, \code{prov{:}used}, {\emph{Alice's\_data\_id}}). Bob then proceeds to operate on the data using the DataONE MATLAB toolbox just as Alice did, eventually publishing a new data package with his own results and their provenance.  At this point, the two provenance documents are physically disjoint, as they reside in different data packages, but they are logically connected, namely through the \emph{prov:used} statement mentioned above.  As they are both indexed by the CN upon publication of the data package, this logical connection emerges automatically when a third party, say Charlie, explores one of the two data packages:
 
 Charlie discovers Bob's data packages on DataONE and is able to navigate back to the data that Bob used, i.e., Alice's data package depicted in \Figref{fig2}~\cite{Katz,data-trajectories}. When he searches the DataONE network using the same keyword ``grass'' from the web search interface, two data packages are displayed as shown in \Figref{fig2}. One data package was created by Alice \cite{yaxing}, the other was created by Bob \cite{christopher}.
@@ -174,7 +173,7 @@ In this example, Charlie quickly learns that Alice's script \code{C3\_C4\_map\_p
 
 %\section{Conclusions}
 
-\mypara{Summary.}  As outlined above, we will demonstrate new and unique provenance capabilities in the large, scientific data federation network DataONE. The search feature was released to the public in late 2015; the R and MATLAB provenance tools in early 2016.
+\mypara{Summary.}  As outlined above, we describe new and unique provenance capabilities in the large, scientific data federation network DataONE. The search feature was released to the public in late 2015; the R and MATLAB provenance tools in early 2016.
 
 %\begin{small}
 \bibliography{references}
