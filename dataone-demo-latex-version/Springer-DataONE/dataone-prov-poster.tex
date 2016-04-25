@@ -1,10 +1,6 @@
 \documentclass[a4paper]{llncs}
 
-%\usepackage{amssymb}
-%\setcounter{tocdepth}{3}
 \usepackage{graphicx}
-
-%\usepackage[linesnumbered,ruled,vlined]{algorithm2e}
 
 
 \usepackage[colorlinks=true,
@@ -17,17 +13,6 @@ linkcolor=blue,
            ]{hyperref}
 
 \usepackage{url}
-
-% \urldef{\mailsa}\path|{alfred.hofmann, ursula.barth, ingrid.haas, frank.holzwarth,|
-% \urldef{\mailsb}\path|anna.kramer, leonie.kunz, christine.reiss, nicole.sator,|
-% \urldef{\mailsc}\path|erika.siebert-cole, peter.strasser, lncs}@springer.com|    
-% \newcommand{\keywords}[1]{\par\addvspace\baselineskip
-% \noindent\keywordname\enspace\ignorespaces#1}
-
-%\usepackage{tikz}
-%\usepackage{aeguill}
-%\usepackage{tikzscale}
-%\usepackage{filecontents} 
 \usepackage{subfig}
 \usepackage[font=footnotesize, belowskip=-20pt, aboveskip=1pt ]{caption}
 \usepackage{times}
@@ -39,7 +24,7 @@ linkcolor=blue,
 \newcommand{\mypara}[1]{\vspace{4pt}\noindent\textbf{#1}}
 \newcommand{\mytt}[1]{\ensuremath{\mathtt{#1}}}
 
-%% PM Define authornote command for comments
+%
 \newcommand{\authornote}[2] {
     \begin{center}
         \framebox{
@@ -59,17 +44,12 @@ linkcolor=blue,
 
 
 
-%\linespread{0.97}
-
 
 \begin{document}
 
-\mainmatter  % start of an individual contribution
+\mainmatter  
 
-% first the title is needed
 \title{DataONE: A Data Federation with Provenance Support}
-
-% \author{Yang Cao\inst{1} \and Christopher Jones\inst{2} \and V\'ictor Cuevas-Vicentt\'in\inst{3} \and Steve Aulenbach\inst{4} \and Matthew B.\ Jones\inst{2} \and Bertram Lud\"ascher\inst{1} \and Timothy McPhillips\inst{1} \and Paolo Missier\inst{5} \and  Christopher Schwalm\inst{6} \and Peter Slaughter\inst{2} \and Dave Vieglais\inst{2} \and Lauren Walker\inst{2} \and Yaxing Wei\inst{7}}
 
 \author{{Yang Cao\thanks{
 $^1$University of Illinois, Urbana-Champaign, 
@@ -82,30 +62,6 @@ $^7$Environmental Sciences Division, ORNL, TN.}$^1$,
 Christopher Jones\inst{2},  V\'ictor Cuevas-Vicentt\'in\inst{3}, Matthew B.\ Jones\inst{2},  Bertram Lud\"ascher\inst{1},  Timothy McPhillips\inst{1},  Paolo Missier\inst{4},   Christopher Schwalm\inst{5},  Peter Slaughter\inst{2},  Dave Vieglais\inst{6},  Lauren Walker\inst{2}, Yaxing~Wei\inst{7} }}
 
 \institute{\relax}
-
-% \institute{\small{Library and Information Science, University of Illinois, Urbana-Champaign, IL\\
-% \and
-% National Center for Ecological Analysis and Synthesis, UCSB, CA \\
-% \and
-% Universidad Popular Aut\'onoma del Estado de Puebla, Mexico\\
-% \and
-% School of Computing Science, Newcastle  University, UK \\
-% \and
-% Woods Hole Research Center, Falmouth, MA \\
-% \and
-% University of Kansas, Lawrence, KS \\
-% \and
-% Environmental Sciences Division, Oak Ridge National Laboratory, TN 
-% }
-% }
-
-
-%
-% NB: a more complex sample for affiliations and the mapping to the
-% corresponding authors can be found in the file "llncs.dem"
-% (search for the string "\mainmatter" where a contribution starts).
-% "llncs.dem" accompanies the document class "llncs.cls".
-%
 
 \toctitle{Lecture Notes in Computer Science}
 \tocauthor{Authors' Instructions}
@@ -155,7 +111,7 @@ At the end of the experimentation phase, Alice is ready to publish her results t
 \end{figure}
 
 
-Bob's interaction with DataONE begins with a user interface search, i.e., using the keyword ``grass'', he discovers Alice's data package, amongst others.  He decides to use three NetCDF output data files which are part of her package, as input to his Grassland Water Use Efficiency Analysis script~\cite{MsTMIP-model-output-data-set}.  Having identified the data of interest in the Member Node, Bob uses its public identifier \textit{id} to retrieve it and use it in his own code. % (\code{GrasslandWUE.m}).  BL: elsewhere in the paper it's called "analysis.m" - inconsistent!
+Bob's interaction with DataONE begins with a user interface search, i.e., using the keyword ``grass'', he discovers Alice's data package, amongst others.  He decides to use three NetCDF output data files which are part of her package, as input to his Grassland Water Use Efficiency Analysis script~\cite{MsTMIP-model-output-data-set}.  Having identified the data of interest in the Member Node, Bob uses its public identifier \textit{id} to retrieve it and use it in his own code. %
 Specifically, the \code{MemberNode.get}(session, id) call, available from the MATLAB toolbox, not only retrieves Alice's data package, but it also ensures that the download event is recorded as part of a new provenance document, associated with Bob's analysis.
 %
 If Bob manually downloaded Alice's data (i.e., without using the DataONE tool), then the link between the data packages would likely be broken, leading to a disconnect in provenance and requiring additional ``stitching'' operations~\cite{missing-link}.
@@ -167,20 +123,20 @@ Charlie discovers Bob's data packages on DataONE and is able to navigate back to
 
 Crucially, the provenance of the two datasets is now manifested visually along with their logical connection, as shown in the DataONE Search web UI \cite{dataone-demo} (Fig.~\ref{fig2}) and is available to Charlie. Specifically, Charlie can not only visualize the two data packages (Alice's is at the top and Bob's at the bottom), but he is also aware of the derivation of Alice's data through Bob's script.
 
-Provenance details for any input or output in the provenance graph can be viewed by clicking on the icons shown in the figure. % \cite[Fig.\,3]{dataone-prov-tech-report-2016}.
+Provenance details for any input or output in the provenance graph can be viewed by clicking on the icons shown in the figure. %
 DataONE Search also provides human language descriptions of how data are used or generated via the script and models, and provides navigation to ancestors and descendants in the data derivation chain.
 %
-In this example, Charlie quickly learns that Alice's script % BL: \code{C3\_C4\_map\_present\_with\_comments.m} 
+In this example, Charlie quickly learns that Alice's script %
 takes twenty-five input files~\cite{MsTMIP-model-driver-data-set} and produces six outputs, shown on the left and right side of Alice's data package, respectively. The bottom three outputs in Alice's data package are the NetCDF data files that represent three different world map grids of percentage of grass types (C$_3$ grass fraction, C$_4$ grass fraction, and total grass fraction)~\cite{MsTMIP-model-driver-data-set}. In addition, a model graph is displayed at the intermediate layer that was generated by the YesWorkflow tool declaring step by step how data are used and derived in the script~\cite{yesworkflow}. Similarly, the provenance information is associated with Bob's data package in Fig.~\ref{fig2}~\cite{christopher,dataone-prov-tech-report-2016,MsTMIP-model-output-data-set}.
 
 
-%\section{Conclusions}
+%
 
 \mypara{Conclusions.}  As outlined above, we have described new and unique provenance capabilities in the large, scientific data federation network DataONE. The search feature was released to the public in late 2015; the R and MATLAB provenance tools in early 2016.
 
-%\begin{small}
+%
 \bibliography{references}
 \bibliographystyle{splncs03}
-%\end{small}
+%
 
 \end{document}
