@@ -109,7 +109,7 @@ Christopher Jones\inst{2},  V\'ictor Cuevas-Vicentt\'in\inst{3}, Matthew B.\ Jon
 \maketitle
 
 \begin{abstract}
-The DataONE federated data network has adopted and extended the PROV model to support the collection, storage, indexing, and user browsing of the provenance of data packages stored in its member nodes. The PROV extension, ProvONE, adds provenance elements (entity and relationships types) for describing process structure alongside the data dependencies that originate from process execution. The ProvONE model was defined in \textbf{xx}, while provenance support based on the model is now (2016) in its pre-production phase.
+The DataONE federated data network has adopted and extended the PROV model to support the collection, storage, indexing, and user browsing of the provenance of data packages stored in its member nodes. The PROV extension, ProvONE, adds provenance elements (entity and relationships types) for describing process structure alongside the data dependencies that originate from process execution. The ProvONE model was defined in 2015 and its specification is available online~\cite{provone}, while provenance support based on the model is now (2016) in its pre-production phase.
 \end{abstract}
 
 \section{DataONE}
@@ -151,6 +151,37 @@ By connecting the \texttt{prov:Plan} extensions with \texttt{provone:Execution},
 
 \section{DataONE support for ProvONE:  infrastructure and tooling}
 
+The ProvONE model features in DataONE infrastructure and tooling, in three main ways. 
+%
+Firstly, ProvONE provides R and MatLab developers with user libraries \cite{recordr,matlabdataone} to enable provenance recording during program execution. The provenance recorder captures all interactions with the DataONE REST API, which include reading and writing data packages from and to a MN.
+The resulting provenance document at the end of a script execution includes references to all data packages consumed and produced by the script. 
+Importantly, these references use the DataONE-assigned data identifiers. Thus, future reuse of the same data packages that occurs through DataONE API clients, will again reference the data packages using the same identifiers, thus enabling tracking through multiple generations of data derivation.
+
+Secondly, developers may use a program markup tool, called \textit{YesWorkflow}~\cite{yesworkflow}, to annotate their scripts (regardless of the language) and obtain a visual rendering of their structure, similar to that of a workflow (hence the name of the tool). The structural description that is compiled from the annotations is a ProvONE document. 
+An example of annotated script and of its visual rendering are shown in Fig.~\ref{script} and ~\ref{yw-graph}, respectively.
+
+\begin{figure}
+\centering 
+\includegraphics[width=.5\textwidth]{MatLabYW-screenshot} 
+\caption{A fragment of YW-annotated MatLab script.} 
+ \label{script} 
+ \end{figure}
+
+\begin{figure}
+\centering 
+\includegraphics[width=\textwidth]{C3_C4_map_present_NA_workflow_comb_diagram} 
+\caption{A rendering of the complete script from Fig.~\ref{script}.} 
+ \label{yw-graph} 
+ \end{figure}
+
+Finally, the DataONE search facility provides simple visualisation of the data derivations through the scripts, enabling step-by-step user navigation of potentially complex provenance graphs. Fig.~\ref{UI} shows a screenshot from the DataONE UI.
+
+\begin{figure}
+\centering 
+\includegraphics[width=\textwidth]{UI-screenshot-derivations} 
+\caption{Rendering in the DataONE UI of data derivations through scripts}
+ \label{UI} 
+ \end{figure}
 
 
 
