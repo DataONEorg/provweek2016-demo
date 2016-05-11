@@ -1715,7 +1715,11 @@
                  href="#">provone:controls</a>,
               <a title="http://www.w3.org/ns/prov-o#wasAssociatedWith"
                  href="http://www.w3.org/TR/2013/REC-prov-o-20130430/#wasAssociatedWith">
-                prov:wasAssociatedWith
+                <font color='red'>prov:wasDerivedFrom</font>
+             </a>,
+             <a title="http://www.w3.org/ns/prov-o#hadPlan"
+                href="http://www.w3.org/TR/2013/REC-prov-o-20130430/#hadPlan">
+                <font color='red'>prov:hadPlan</font>
              </a>
             </li>
           </ul>
@@ -2019,11 +2023,8 @@
              <a title="http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram"
                   href="#">provone:hasSubProgram</a>,
              <a title="http://purl.dataone.org/provone/2015/01/15/ontology#controls" href="#">provone:controls</a>,
-             <a title="http://www.w3.org/ns/prov-o#wasAssociatedWith"
-             href="http://www.w3.org/TR/2013/REC-prov-o-20130430/#wasAssociatedWith">
-             prov:wasAssociatedWith</a>,
              <a title="http://www.w3.org/ns/prov-o#wasDerivedFrom"
-            href="http://www.w3.org/TR/2013/REC-prov-o-20130430/#wasDerivedFrom">
+            href="http://www.w3.org/TR/2013/REC-prov-o-20130430/#wasDerivedFrom">,
             prov:wasDerivedFrom</a>
            </li>
           </ul>
@@ -2430,6 +2431,18 @@
               <a title="http://www.w3.org/ns/prov-o#wasInformedBy"
                href="http://www.w3.org/TR/2013/REC-prov-o-20130430/#wasInformedBy">
                prov:wasInformedBy
+              </a>,
+              <a title="http://www.w3.org/ns/prov-o#qualifiedGeneration"
+                 href="http://www.w3.org/TR/2013/REC-prov-o-20130430/#qualifiedGeneration">
+               <font color='red'>prov:qualifiedGeneration</font>
+              </a>,
+              <a title="http://www.w3.org/ns/prov-o#qualifiedAssociation"
+                 href="http://www.w3.org/TR/2013/REC-prov-o-20130430/#qualifiedAssociation">
+                 <font color='red'>prov:qualifiedAssociation</font>
+              </a>,
+              <a title="http://www.w3.org/ns/prov-o#qualifiedUsage"
+                 href="http://www.w3.org/TR/2013/REC-prov-o-20130430/#qualifiedUsage">
+                 <font color='red'>prov:qualifiedUsage</font>
               </a>
             </li>
           </ul>
@@ -2444,6 +2457,9 @@
               <a title="http://www.w3.org/ns/prov-o#wasInformedBy"
                  href="http://www.w3.org/TR/2013/REC-prov-o-20130430/#wasInformedBy">
                 prov:wasInformedBy
+              </a>,
+              <a title="#execution-specification" href="#waspartof-specification">
+                <font color='red'>provone:waspartof</font>
               </a>
             </li>
           </ul>
@@ -3088,7 +3104,7 @@
         11
         12   :workflow_1ex1 prov:wasAssociatedWith :workflow_1  .
         13
-        14   :program_1ex1 prov:wasPartOf :workflow_1ex1 .
+        14   :program_1ex1 provone:wasPartOf :workflow_1ex1 .
         15
         </pre>
         First, an <em>Execution</em> <span class="name">workflow_1ex1</span> is defined beginning at
@@ -3587,10 +3603,6 @@
               <a title="http://www.w3.org/TR/2013/REC-prov-o-20130430/#wasGeneratedBy"
                  href="#wasgeneratedby-specification">
                prov:wasGeneratedBy
-              </a>,
-              <a title="http://www.w3.org/TR/2013/REC-prov-o-20130430/#atLocation"
-                 href="#atlocation-specification">
-               prov:atLocation
               </a>
             </li>
           </ul>
@@ -3732,7 +3744,7 @@
 
         <section id="visualization-specification">
 
-          <h4><span class="secno">3.3.4 </span>Data class</h4>
+          <h4><span class="secno">3.3.4 </span><font color='red'>Visualization</font> class</h4>
 
           <div class="glossary-ref">A
             <dfn id="concept-visualization" title="Visualization" class="internalDFN">
