@@ -2078,15 +2078,14 @@
         <a href="#program-example">Example 1</a> of the <em>Program</em> class.
         </p>
         <pre class="codeexample">
-        18
-        19   :top_program
-        20
-        21      a provone:Program;
-        22      dcterms:identifier "main"^^xsd:string;
-        23
-        24   .
-        25
-        26   :top_program provone:hasSubProgram :program_1 .
+        1   :top_program
+        2
+        3      a provone:Program;
+        4      dcterms:identifier "main"^^xsd:string;
+        5
+        6   .
+        7
+        8   :top_program provone:hasSubProgram :program_1 .
         </pre>
         A <em>Program</em> identified within the document as <span class="name">top_program</span>, is given the <span class="name">identifier</span>
         value <span class="name">main</span>. Subsequently, in line 26 it is specified that the
@@ -2242,15 +2241,16 @@
         <div class="anexampleTitle">Example 12<sup><a class="internalDFN" href="#anexample-entity"><span class="diamond"> ◊</span></a></sup></div>
         <p>
         The following RDF fragment illustrates the use of the <span class="name">hasOutPort</span> object property by complementing
-        <a href="#program-example">Example 1</a> of the <em>Program</em> class and <a href="#outputport-example">Example 2</a> of the <em>Port</em> class.
+        <a href="#program-example">Example 1</a> of the <em>Program</em> class and the <em>Port</em> class.
         </p>
         <pre class="codeexample">
         1
         2    :program_1 provone:hasOutPort :p1_op1 .
         3
+        4    :p1_op1 a provone:Port .
         </pre>
         Line 2 specifies that the <em>Program</em> <span class="name">program_1</span>, defined in <a href="#program-example">Example 1</a>, has a
-        <em>Port</em> <span class="name">p1_op1</span>, defined in <a href="#outputport-example">Example 2</a>.
+        <em>Port</em> <span class="name">p1_op1</span>.
         </div>
 
         </section><!-- !!! End section: hasoutport-specification -->
@@ -2289,7 +2289,7 @@
         Line 2 specifies that the <em>Port</em> <span class="name">p1_ip1</span>, defined in
         <a href="#inputport-example">Example 2</a> and associated in <a href="#hasinport-example">Example 11</a> with <em>Program</em>
         <span class="name">program_1</span> of <a href="#program-example">Example 1</a>, has as a default parameter the
-        <em>Data</em> item <span class="name">data1</span>, defined in <a href="#data-example">Example 24</a>.
+        <em>Data</em> item <span class="name">data1</span>, defined in <a href="#data-example">Example 40</a>.
         </div>
 
         </section><!-- !!! End section: hasdefaultparam-specification -->
@@ -2316,7 +2316,7 @@
           </ul>
 
           <div class="anexample" id="connectsTo-example">
-          <div class="anexampleTitle">Example 16<sup><a class="internalDFN" href="#anexample-entity"><span class="diamond"> ◊</span></a></sup></div>
+          <div class="anexampleTitle">Example 14<sup><a class="internalDFN" href="#anexample-entity"><span class="diamond"> ◊</span></a></sup></div>
           <p>
           The following RDF fragment illustrates the use of the <span class="name">connectsTo</span> object property.
           </p>
@@ -2369,7 +2369,7 @@
         </ul>
 
         <div class="anexample" id="wasderivedfrom-example">
-        <div class="anexampleTitle">Example 19<sup><a class="internalDFN" href="#anexample-entity"><span class="diamond"> ◊</span></a></sup></div>
+        <div class="anexampleTitle">Example 15<sup><a class="internalDFN" href="#anexample-entity"><span class="diamond"> ◊</span></a></sup></div>
         <p>
         The following RDF fragment illustrates the use of the <span class="name">wasDerivedFrom</span> object property by extending
         <a href="#workflow-example">Example 6</a> of the <em>Workflow</em> class.
@@ -2559,7 +2559,7 @@
           </ul>
 
           <div class="anexample" id="association-example">
-            <div class="anexampleTitle">Example xxx
+            <div class="anexampleTitle">Example 21
               <sup>
                 <a class="internalDFN" href="#anexample-entity">
                   <span class="diamond"> ◊</span>
@@ -2575,12 +2575,12 @@
             1    :association_1
             2
             3       a prov:Association;
-            4       prov:hadPlan :program_1ex1;
+            4       prov:hadPlan :program_1;
             5    .
             </pre>
             First, an <em>Association</em> <span class="name">association_1</span> is defined beginning at line 1. Line 4 specifies that <em>Association</em>
-            <span class="name">association_1</span> had <em>Execution</em> <span class="name">program_1ex1</span> of
-            <a href="#execution-example">Example 20</a> as a plan.
+            <span class="name">association_1</span> had <em>Program</em> <span class="name">program_1</span> defined in
+            <a href="#program-example">Example 1</a> as a plan.
           </div>
         </section><!-- !!! End section: association-specification -->
 
@@ -2642,7 +2642,7 @@
           </ul>
 
           <div class="anexample" id="usage-example">
-            <div class="anexampleTitle">Example xxx
+            <div class="anexampleTitle">Example 22
               <sup>
                 <a class="internalDFN" href="#anexample-entity">
                   <span class="diamond"> ◊</span>
@@ -2660,10 +2660,10 @@
             3       a prov:Usage;
             4       prov:used dataSetA;
             5       provone:hadEntity dataSetA;
-            10   .
-            11   :dataSetA a prov:Entity .
+            6   .
+            7   :dataSetA a prov:Entity .
             </pre>
-            A <em>Usage</em> <span class="name">usage_1</span> is simply defined beginning at line 1.
+            A <em>Usage</em> <span class="name">usage_1</span> specifies that an <em>Entity</em> <span class="name">dataSetA</span> is used at line 4.
           </div>
         </section><!-- !!! End section: usage-specification -->
 
@@ -2725,7 +2725,7 @@
           </ul>
 
           <div class="anexample" id="generation-example">
-            <div class="anexampleTitle">Example xxx
+            <div class="anexampleTitle">Example 23
               <sup>
                 <a class="internalDFN" href="#anexample-entity">
                   <span class="diamond"> ◊</span>
@@ -2742,11 +2742,13 @@
             2
             3       a prov:Generation;
             4       prov:wasGeneratedBy :program_1ex1;
-            5       provone:hadEntity :datasetB;
+            5       provone:hadEntity :dataSetB;
             6   .
-            7   :datasetB a prov:Entity .
+            7   :dataSetB a prov:Entity .
             </pre>
-            A <em>Generation</em> <span class="name">generation_1</span> is simply defined beginning at line 1.
+            A <em>Generation</em> <span class="name">generation_1</span> is simply defined beginning at line 1. <span class="name">generation_1</span> was generated by
+            <em>Execution</em> <span class="name">program_1ex1</span> defined in <a href="#execution-example">Example 20</a> at line 4 and had an
+            <em>Entity</em><span class="name">dataSetB</span> at line 5.
           </div>
         </section><!-- !!! End section: generation-specification -->
 
@@ -2792,7 +2794,7 @@
           </ul>
 
           <div class="anexample" id="user-example">
-            <div class="anexampleTitle">Example xxx
+            <div class="anexampleTitle">Example 24
               <sup>
                 <a class="internalDFN" href="#anexample-entity">
                   <span class="diamond"> ◊</span>
@@ -2843,7 +2845,7 @@
         </ul>
 
         <div class="anexample" id="used-example">
-        <div class="anexampleTitle">Example 22
+        <div class="anexampleTitle">Example 25
           <sup>
             <a class="internalDFN" href="#anexample-entity">
               <span class="diamond"> ◊</span>
@@ -2854,7 +2856,7 @@
         The following RDF fragment illustrates the use of the <span class="name">used</span> object
         property by complementing
         <a href="#execution-example">Example 8</a> of the <em>Execution</em> class and
-        <a href="#data-example">Example 26</a> of the
+        <a href="#data-example">Example 40</a> of the
         <em>Data</em> class.
         </p>
         <pre class="codeexample">
@@ -2900,7 +2902,7 @@
         </ul>
 
         <div class="anexample" id="wasgeneratedby-example">
-        <div class="anexampleTitle">Example 23
+        <div class="anexampleTitle">Example 26
           <sup>
             <a class="internalDFN" href="#anexample-entity">
               <span class="diamond"> ◊</span>
@@ -2924,8 +2926,7 @@
         9    :data2 prov:wasGeneratedBy :program_1_ex1 .
         10
         </pre>
-        First, a <em>Data</em> item <span class="name">data2</span> is defined beginning at line 2,
-        which also appears in <a href="#atlocation-example">Example 21</a>. Line 9 specifies that the
+        First, a <em>Data</em> item <span class="name">data2</span> is defined beginning at line 2. Line 9 specifies that the
         <em>Data</em> item <span class="name">data2</span> was produced as an output of
         <em>Execution</em> <span class="name">program_1ex1</span> of <a
         href="#execution-example">Example 20</a>.
@@ -2962,7 +2963,7 @@
         </ul>
 
         <div class="anexample" id="wasassociatedwith-example">
-        <div class="anexampleTitle">Example 23
+        <div class="anexampleTitle">Example 27
           <sup>
             <a class="internalDFN" href="#anexample-entity">
               <span class="diamond"> ◊</span>
@@ -2975,8 +2976,7 @@
         <a href="#execution-example">Example 20</a> of the <em>Execution</em> class.
         </p>
         <pre class="codeexample">
-        1
-        2    :program_1ex1 prov:wasAssociatedWith :user_1 .
+        1    :program_1ex1 prov:wasAssociatedWith :user_1 .
         </pre>
         Line 1 specifies that the <em>User</em> <span class="name">user_1</span> was associated with
         <em>Execution</em> <span class="name">program_1ex1</span> of <a
@@ -3014,7 +3014,7 @@
         </ul>
 
         <div class="anexample" id="wasinformedby-example">
-        <div class="anexampleTitle">Example 25
+        <div class="anexampleTitle">Example 28
           <sup>
             <a class="internalDFN" href="#anexample-entity">
               <span class="diamond"> ◊</span>
@@ -3077,7 +3077,7 @@
         </ul>
 
         <div class="anexample" id="waspartof-example">
-        <div class="anexampleTitle">Example xxx
+        <div class="anexampleTitle">Example 29
           <sup>
             <a class="internalDFN" href="#anexample-entity">
               <span class="diamond"> ◊</span>
@@ -3149,7 +3149,7 @@
         </ul>
 
         <div class="anexample" id="qualifiedAssociation-example">
-        <div class="anexampleTitle">Example xxx
+        <div class="anexampleTitle">Example 30
           <sup>
             <a class="internalDFN" href="#anexample-entity">
               <span class="diamond"> ◊</span>
@@ -3167,12 +3167,16 @@
         2        prov:qualifiedAssociation [
         3            a prov:Association;
         4            prov:agent :user_1;
-        5            prov:hadPlan :workflow_1;
+        5            prov:hadPlan :program_1;
         6            rdfs:comment "user_1 created this association.";
         7        ]
         8    .
         </pre>
-
+        This example is complementary to the <em>Execution</em> <span class="name">program_1ex1</span> defined in <a href="#execution-example">Example 20</a>.
+        Line 2 specifies that
+        <span class="name">program_1ex1</span> has a qualified association with a plan
+        <em>Program</em> <span class="name">program_1, defined in <a href="#program-example">Example 1</a></span>.
+        Then, <span class="name">program_1ex1</span> is assocated with a <em>User</em> <span class="name">user_1</span>.
         </div>
         </section><!-- !!! End section: qualifiedassociation-specification -->
 
@@ -3208,7 +3212,7 @@
         </ul>
 
         <div class="anexample" id="agent-example">
-        <div class="anexampleTitle">Example xxx
+        <div class="anexampleTitle">Example 31
           <sup>
             <a class="internalDFN" href="#anexample-entity">
               <span class="diamond"> ◊</span>
@@ -3218,14 +3222,15 @@
         <p>
         The following RDF fragment illustrates the use of the <span class="name">agent</span>
         object property by complementing
-        <a href="#association-example">Example xxx</a> of the <em>Association</em> class.
+        <a href="#association-example">Example 21</a> of the <em>Association</em> class.
         </p>
         <pre class="codeexample">
         1    :association_1 prov:agent foo_University .
         2
         3    foo_University a prov:Organization, prov:Agent .
         </pre>
-
+        The <em>Association</em> <span class="name">asociation_1</span> is defined to have an agent
+        <span class="name">foo_University</span> which is an <em>Organization</em>.
         </div>
         </section><!-- !!! End section: agent-specification -->
 
@@ -3260,7 +3265,7 @@
         </ul>
 
         <div class="anexample" id="hadPlan-example">
-        <div class="anexampleTitle">Example xxx
+        <div class="anexampleTitle">Example 32
           <sup>
             <a class="internalDFN" href="#anexample-entity">
               <span class="diamond"> ◊</span>
@@ -3270,13 +3275,13 @@
         <p>
         The following RDF fragment illustrates the use of the <span class="name">hadPlan</span>
         object property by complementing
-        <a href="#association-example">Example xxx</a> of the <em>Association</em> class and
+        <a href="#association-example">Example 21</a> of the <em>Association</em> class and
         <a href="#workflow-example">Example 6</a> of the <em>Workflow</em> class.
         </p>
         <pre class="codeexample">
-        1    :association_1 provone:hadPlan :workflow_1 .
+        1    :association_1 provone:hadPlan :program_1 .
         </pre>
-
+        Line 1 specifies that the <em>Association</em> <span class="name">association_1</span> has <em>Program</em> <span class="name">program_1</span> as a plan.
         </div>
         </section><!-- !!! End section: hadplan-specification -->
 
@@ -3335,7 +3340,7 @@
         </ul>
 
         <div class="anexample" id="qualifiedUsage-example">
-        <div class="anexampleTitle">Example xxx
+        <div class="anexampleTitle">Example 33
           <sup>
             <a class="internalDFN" href="#anexample-entity">
               <span class="diamond"> ◊</span>
@@ -3355,6 +3360,8 @@
         5        ]
         6    .
         </pre>
+        Line 2 defines a qualified usage with an <em>Entity</em> <span class="name">dataSetA</span> for the <em>Execution</em>
+        <span class="name">program_1ex1</span> in <a href="#execution-example">Example 20</a>.
 
         </div>
         </section><!-- !!! End section: qualifiedusage-specification -->
@@ -3391,7 +3398,7 @@
         </ul>
 
         <div class="anexample" id="hadInPort-example">
-        <div class="anexampleTitle">Example xxx
+        <div class="anexampleTitle">Example 34
           <sup>
             <a class="internalDFN" href="#anexample-entity">
               <span class="diamond"> ◊</span>
@@ -3401,12 +3408,13 @@
         <p>
         The following RDF fragment illustrates the use of the <span class="name">hadInPort</span>
         object property by complementing
-        <a href="#usage-example">Example xxx</a> of the <em>Usage</em> class.
+        <a href="#usage-example">Example 22</a> of the <em>Usage</em> class.
         </p>
         <pre class="codeexample">
         1    :usage_1 provone:hadInPort :p1_ip1 .
         </pre>
-
+        Line 2 specifies that the <em>Usage</em> <span class="name">usage_1</span>, defined in <a href="#usage-example">Example 22</a>, has an input
+        <em>Port</em> <span class="name">p1_ip1</span>, defined in <a href="#inputport-example">Example 2</a>.
         </div>
         </section><!-- !!! End section: hadinport-specification -->
 
@@ -3443,7 +3451,7 @@
         </ul>
 
         <div class="anexample" id="hadOutPort-example">
-        <div class="anexampleTitle">Example xxx
+        <div class="anexampleTitle">Example 35
           <sup>
             <a class="internalDFN" href="#anexample-entity">
               <span class="diamond"> ◊</span>
@@ -3453,8 +3461,8 @@
         <p>
         The following RDF fragment illustrates the use of the <span class="name">hadOutPort</span>
         object property by complementing
-        <a href="#generation-example">Example xxx</a> of the <em>Generation</em> class and
-        <a href="#usage-example">Example xxx</a> of the <em>Usage</em> class..
+        <a href="#generation-example">Example 23</a> of the <em>Generation</em> class and
+        <a href="#usage-example">Example 22</a> of the <em>Usage</em> class..
         </p>
         <pre class="codeexample">
         1    :generation_1 provone:hadEntity :dataSetC .
@@ -3463,7 +3471,8 @@
         4    :dataSetC a prov:Entity .
         5    :dataSetD a prov:Entity .
         </pre>
-
+        Line 1 specifies the <em>Generation</em> <span class="name">generation_1</span> has an <em>Entity</em> <span class="name">dataSetC</span>. Line 2
+        specifies the <em>Usage</em> <span class="name">usage_1</span> has an entity dataSetD.
         </div>
         </section><!-- !!! End section: hadentity-specification -->
 
@@ -3497,7 +3506,7 @@
         </ul>
 
         <div class="anexample" id="qualifiedGeneration-example">
-        <div class="anexampleTitle">Example xxx
+        <div class="anexampleTitle">Example 36
           <sup>
             <a class="internalDFN" href="#anexample-entity">
               <span class="diamond"> ◊</span>
@@ -3517,7 +3526,8 @@
         5        ]
         6    .
         </pre>
-
+        Line 2 defines that the <em>Execution</em> <span class="name">program_1ex1</span> in <a href="#execution-example">Example 20</a> has a qualified generation with a timestamp
+        <span class="name">"2013-08-21 13:37:53"</span>.
         </div>
         </section><!-- !!! End section: qualifiedgeneration-specification -->
 
@@ -3553,7 +3563,7 @@
         </ul>
 
         <div class="anexample" id="hadOutPort-example">
-        <div class="anexampleTitle">Example xxx
+        <div class="anexampleTitle">Example 37
           <sup>
             <a class="internalDFN" href="#anexample-entity">
               <span class="diamond"> ◊</span>
@@ -3563,12 +3573,13 @@
         <p>
         The following RDF fragment illustrates the use of the <span class="name">hadOutPort</span>
         object property by complementing
-        <a href="#generation-example">Example xxx</a> of the <em>Generation</em> class.
+        <a href="#generation-example">Example 23</a> of the <em>Generation</em> class.
         </p>
         <pre class="codeexample">
         1    :generation_1 provone:hadOutPort :p1_op1 .
         </pre>
-
+        Line 1 specifies the <em>Generation</em> <span class="name">generation_1</span> has a <em>Port</em> <span class="name">p1_op1</span> defined
+        in <a href="#hasoutport-example">Example 12</a> as an output.
         </div>
         </section><!-- !!! End section: hadoutport-specification -->
 
@@ -3660,7 +3671,7 @@
           <p><strong>IRI:</strong>http://www.w3.org/ns/prov#Collection</p>
 
           <div class="anexample" id="collection-example">
-          <div class="anexampleTitle">Example 28<sup><a class="internalDFN"
+          <div class="anexampleTitle">Example 39<sup><a class="internalDFN"
                href="#anexample-entity"><span class="diamond"> ◊</span></a></sup></div>
             <p>
             The following RDF fragment specifies a <span class="name">Collection</span> identified
@@ -3706,7 +3717,7 @@
           </ul>
 
           <div class="anexample" id="data-example">
-            <div class="anexampleTitle">Example 27
+            <div class="anexampleTitle">Example 40
               <sup>
                 <a class="internalDFN" href="#anexample-entity">
                   <span class="diamond"> ◊</span>
@@ -3835,7 +3846,7 @@
           </ul>
 
           <div class="anexample" id="wasderivedfrom-example">
-            <div class="anexampleTitle">Example 29
+            <div class="anexampleTitle">Example 43
               <sup>
                 <a class="internalDFN" href="#anexample-entity">
                   <span class="diamond"> ◊</span>
@@ -3844,7 +3855,7 @@
             </div>
             <p>
             The following RDF fragment illustrates the use of the <span class="name">wasDerivedFrom</span> object property by extending
-            <a href="#data-example">Example 27</a> of the <em>Data</em> class.
+            <a href="#data-example">Example 40</a> of the <em>Data</em> class.
             </p>
             <pre class="codeexample">
       1
@@ -3861,10 +3872,9 @@
       12   :data2 prov:wasDerivedFrom :data1 .
       13
             </pre>
-            First, a <em>Data</em> item <span class="name">data2</span> is defined beginning at line 2,
-            which also appears in <a href="#atlocation-example">Example 21</a>. Line 12 specifies that
+            First, a <em>Data</em> item <span class="name">data2</span> is defined beginning at line 2. Line 12 specifies that
             the <em>Data</em> item <span class="name">data2</span> was produced from <em>Data</em> item
-            <span class="name">data1</span> of <a href="#data-example">Example 27</a>.
+            <span class="name">data1</span> of <a href="#data-example">Example 40</a>.
           </div>
 
         </section><!-- !!! End section: wasderivedfrom-specification -->
@@ -3903,7 +3913,7 @@
           </ul>
 
           <div class="anexample" id="hadmember-example">
-            <div class="anexampleTitle">Example 30
+            <div class="anexampleTitle">Example 44
               <sup>
                 <a class="internalDFN" href="#anexample-entity">
                   <span class="diamond"> ◊</span>
@@ -3912,7 +3922,7 @@
             </div>
             <p>
               The following RDF fragment illustrates the use of the <span class="name">hadMember</span>
-              object property by extending <a href="#collection-example">Example 28</a> of the
+              object property by extending <a href="#collection-example">Example 39</a> of the
               <em>Collection</em> class.
             </p>
             <pre class="codeexample">
@@ -3945,7 +3955,7 @@
             Two <em>Data</em> items <span class="name">infile1</span> and <span
             class="name">infile2</span> are defined in lines 2-20. Line 22 specifies that <em>Data</em>
             item <span class="name">infile1</span> was a member of <em>Collection</em> item <span
-            class="name">col1</span> of <a href="#collection-example">Example 28</a>. Analogously, line
+            class="name">col1</span> of <a href="#collection-example">Example 39</a>. Analogously, line
             24 specifies <em>Data</em> item <span class="name">infile2</span> also as part of
             <em>Collection</em> item <span class="name">col1</span>.
           </div>
