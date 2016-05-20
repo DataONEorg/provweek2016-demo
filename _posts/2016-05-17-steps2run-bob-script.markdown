@@ -20,7 +20,7 @@ Bob then proceeds to operate
 on the data using the DataONE MATLAB toolbox just as Alice did, eventually publishing
 a new data package with his own results and their provenance.
 
-Steps to run Alice's script are listed as below:
+Steps to run Bob's script are listed as below and an example [data package for Bob](https://search-sandbox-2.test.dataone.org/#view/metadata_07277c1f-b2c2-467c-8aa2-792863524a21.xml) was generated.
 
 {% highlight matlab %}
 cd ~/Documents/C3_C4_Bob
