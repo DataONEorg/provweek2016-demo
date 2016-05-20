@@ -28,7 +28,7 @@ itself, and its YW-generated workflow view.
 Steps to run Alice’s script are listed as below and an example [data package for Alice](https://search-sandbox-2.test.dataone.org/#view/metadata_e859d2dd-c5e6-4ec6-892f-1b00bb6f8f65.xml) was generated.
 
 {% highlight matlab %}
-cd ~/Documents/C3_C4_mapping/
+cd ~/Documents/C3_C4_Alice/
 
 import org.dataone.client.run.RunManager;
 import org.dataone.client.configure.Configuration;
