@@ -30,7 +30,7 @@ itself, and its YW-generated workflow view.
 
 Steps to run Alice's script are listed as below:
 
-{% highlight ruby %}
+{% highlight matlab %}
 cd ~/Documents/C3_C4_mapping/
 
 import org.dataone.client.run.RunManager;

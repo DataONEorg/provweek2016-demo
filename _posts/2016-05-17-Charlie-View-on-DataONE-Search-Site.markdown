@@ -4,13 +4,20 @@ title:  "Charlie's View on DataONE Search!"
 date:   2016-05-17 12:20:30 -0500
 categories: DataONE provenance
 ---
-You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
-
-To add new posts, simply add a file in the `_posts` directory that follows the convention `YYYY-MM-DD-name-of-post.ext` and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.
+Charlie discovers Bob’s data packages on DataONE and is able to navigate back to the
+data that Bob used, i.e., Alice’s data package depicted in Fig. 4 [9,11]. When he searches
+the DataONE network using the same keyword “grass” from the web search interface,
+two data packages are displayed as shown in Fig. 3, namely Alice’s and Bob’s. One
+data package is created by “Alice” [17], the other is created by “Bob” [13]. Crucially,
+the provenance of the two datasets is now manifested visually along with their logical
+connection, as shown in the DataONE Search web UI for our demo site [2] (Fig. 4) and
+is available to Charlie. Specifically, Charlie can not only visualize the two data packages
+(Alice’s is at the top and Bob’s at the bottom), but he is also aware of the derivation of
+Alice’s data through Bob’s script.
 
 Jekyll also offers powerful support for code snippets:
 
-{% highlight ruby %}
+{% highlight matlab %}
 def print_hi(name)
   puts "Hi, #{name}"
 end

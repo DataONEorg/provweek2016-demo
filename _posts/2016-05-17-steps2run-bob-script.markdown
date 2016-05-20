@@ -22,7 +22,7 @@ a new data package with his own results and their provenance.
 
 Steps to run Alice's script are listed as below:
 
-{% highlight ruby %}
+{% highlight matlab %}
 cd ~/Documents/C3_C4_Bob
 
 import org.dataone.client.run.RunManager;
