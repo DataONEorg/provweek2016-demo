@@ -12,8 +12,8 @@ proper attribution of scientific results transitively across generations of deri
 data products. With DataONE provenance tools, each run of a script will generate a data package. As the data package is indexed by the coordinating node upon the publication of the data package, the logical connection can be viewed and explored at [DataONE Search Site](https://search-sandbox-2.test.dataone.org).
 
 In this demonstration we describe two features related to provenance. The first is an API
-for capturing retrospective provenance from [R](https://github.com/NCEAS/recordr) and [Matlab](https://github.com/DataONEorg/matlab-dataone) script executions,
-called Run Manager. The second is a script annotation tool, which we call [YesWorkflow](https://github.com/yesworkflow-org/yw-prototypes), designed to help developers and users better understand the structure and intent of a script.
+for capturing **retrospective** provenance from [R](https://github.com/NCEAS/recordr) and [Matlab](https://github.com/DataONEorg/matlab-dataone) script executions,
+called Run Manager. The second is a script annotation tool for **prospective** provenance, which we call [YesWorkflow](https://github.com/yesworkflow-org/yw-prototypes), designed to help developers and users better understand the structure and intent of a script.
 
 
 
