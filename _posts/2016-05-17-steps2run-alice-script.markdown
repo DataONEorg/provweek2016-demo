@@ -28,7 +28,7 @@ uses the DataONE MATLAB tool to automatically generate a DataONE-compliant data
 package in OAI-ORE format, including the ProvONE provenance document, the script
 itself, and its YW-generated workflow view.
 
-Steps to run Alice's script is listed as below:
+Steps to run Alice's script are listed as below:
 
 {% highlight ruby %}
 cd ~/Documents/C3_C4_mapping/

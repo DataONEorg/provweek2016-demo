@@ -20,7 +20,7 @@ Bob then proceeds to operate
 on the data using the DataONE MATLAB toolbox just as Alice did, eventually publishing
 a new data package with his own results and their provenance.
 
-Steps to run Alice's script is listed as below:
+Steps to run Alice's script are listed as below:
 
 {% highlight ruby %}
 cd ~/Documents/C3_C4_Bob
