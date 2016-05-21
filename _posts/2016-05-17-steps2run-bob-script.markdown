@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Steps to Run Bob's Script!"
+title:  "Steps to Run Bob's Script"
 date:   2016-05-17 12:15:30 -0500
 categories: DataONE provenance
 ---
@@ -9,7 +9,7 @@ keyword **grass**, he discovers [Alice’s data package](https://search-sandbox-
 three NetCDF output data files which are part of her package, as input to his Grassland
 Water Use Efficiency Analysis script. Having identified the data of interest in the
 Member Node, Bob uses `its public identifier id` to retrieve it and use it in his own
-code (`GrasslandWUE.m`). Specifically, the `MemberNode:get(session, id)`` call, available
+code (`GrasslandWUE.m`). Specifically, the `MemberNode:get(session, id)` call, available
 from the MATLAB toolbox, not only retrieves Alice’s data package, but it also ensures
 that the download event is recorded as part of a new provenance document, associated
 with Bob’s analysis. If Bob manually downloaded Alice’s data (i.e., without using the
