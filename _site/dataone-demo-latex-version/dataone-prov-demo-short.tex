@@ -1,0 +1,206 @@
+\documentclass[a4paper]{llncs}
+
+%\usepackage{amssymb}
+%\setcounter{tocdepth}{3}
+\usepackage{graphicx}
+
+%\usepackage[linesnumbered,ruled,vlined]{algorithm2e}
+
+
+\usepackage[colorlinks=true,
+urlcolor=blue,
+citecolor=blue,
+linkcolor=blue,
+           bookmarks=false,
+           bookmarksnumbered,
+           linktocpage=true
+           ]{hyperref}
+
+\usepackage{url}
+
+% \urldef{\mailsa}\path|{alfred.hofmann, ursula.barth, ingrid.haas, frank.holzwarth,|
+% \urldef{\mailsb}\path|anna.kramer, leonie.kunz, christine.reiss, nicole.sator,|
+% \urldef{\mailsc}\path|erika.siebert-cole, peter.strasser, lncs}@springer.com|    
+% \newcommand{\keywords}[1]{\par\addvspace\baselineskip
+% \noindent\keywordname\enspace\ignorespaces#1}
+
+%\usepackage{tikz}
+%\usepackage{aeguill}
+%\usepackage{tikzscale}
+%\usepackage{filecontents} 
+\usepackage{subfig}
+\usepackage[font=footnotesize, belowskip=-20pt, aboveskip=1pt ]{caption}
+\usepackage{times}
+
+\usepackage{color}
+
+
+
+\newcommand{\mypara}[1]{\vspace{4pt}\noindent\textbf{#1}}
+\newcommand{\mytt}[1]{\ensuremath{\mathtt{#1}}}
+
+%% PM Define authornote command for comments
+\newcommand{\authornote}[2] {
+    \begin{center}
+        \framebox{
+            {\begin{minipage}[t]{0.9\linewidth}
+                \raggedright  \textbf{[#1]}~ \scriptsize #2 \normalsize
+            \end{minipage}}
+    }
+    \end{center}
+}
+
+
+\newcommand{\codealt}[1]{\textup{\small\sf #1}}
+\newcommand{\code}[1]{\ensuremath{\mathsf{#1}}}
+
+\newcommand{\Figref}[1]{Figure\,\ref{#1}}
+\newcommand{\figref}[1]{Fig.\,\ref{#1}}
+
+
+
+%\linespread{0.97}
+
+
+\begin{document}
+
+\mainmatter  % start of an individual contribution
+
+% first the title is needed
+\title{DataONE: A Data Federation with Provenance Support}
+
+% \author{Yang Cao\inst{1} \and Christopher Jones\inst{2} \and V\'ictor Cuevas-Vicentt\'in\inst{3} \and Steve Aulenbach\inst{4} \and Matthew B.\ Jones\inst{2} \and Bertram Lud\"ascher\inst{1} \and Timothy McPhillips\inst{1} \and Paolo Missier\inst{5} \and  Christopher Schwalm\inst{6} \and Peter Slaughter\inst{2} \and Dave Vieglais\inst{2} \and Lauren Walker\inst{2} \and Yaxing Wei\inst{7}}
+
+\author{{Yang Cao\thanks{
+$^1$University of Illinois, Urbana-Champaign, 
+$^2$National Center for Ecological Analysis and Synthesis, UCSB,
+$^3$Universidad Popular Aut\'onoma del Estado de Puebla, Mexico,
+$^4$School of Computing Science, Newcastle  University, UK,
+$^5$Woods Hole Research Center, Falmouth, MA,
+$^6$University of Kansas, Lawrence,
+$^7$Environmental Sciences Division, ORNL, TN.}$^1$,
+Christopher Jones\inst{2},  V\'ictor Cuevas-Vicentt\'in\inst{3}, Matthew B.\ Jones\inst{2},  Bertram Lud\"ascher\inst{1},  Timothy McPhillips\inst{1},  Paolo Missier\inst{4},   Christopher Schwalm\inst{5},  Peter Slaughter\inst{2},  Dave Vieglais\inst{6},  Lauren Walker\inst{2}, Yaxing~Wei\inst{7} }}
+
+\institute{\relax}
+
+% \institute{\small{Library and Information Science, University of Illinois, Urbana-Champaign, IL\\
+% \and
+% National Center for Ecological Analysis and Synthesis, UCSB, CA \\
+% \and
+% Universidad Popular Aut\'onoma del Estado de Puebla, Mexico\\
+% \and
+% School of Computing Science, Newcastle  University, UK \\
+% \and
+% Woods Hole Research Center, Falmouth, MA \\
+% \and
+% University of Kansas, Lawrence, KS \\
+% \and
+% Environmental Sciences Division, Oak Ridge National Laboratory, TN 
+% }
+% }
+
+
+%
+% NB: a more complex sample for affiliations and the mapping to the
+% corresponding authors can be found in the file "llncs.dem"
+% (search for the string "\mainmatter" where a contribution starts).
+% "llncs.dem" accompanies the document class "llncs.cls".
+%
+
+\toctitle{Lecture Notes in Computer Science}
+\tocauthor{Authors' Instructions}
+\maketitle
+
+\begin{abstract}
+  DataONE is a federated data network focusing on earth and environmental science data. We present the provenance and search features of DataONE by means of an example involving three earth scientists who interact through a DataONE Member Node. DataONE provenance systems enable reproducible research and facilitate proper attribution of scientific results transitively across generations of derived data products.
+ \end{abstract}
+
+
+
+
+\section{Introduction}
+
+Scientific workflow provenance is valuable in computational science. Provenance can help scientists better understand and share their work with others while maintaining attribution. We refer to two types of provenance: \emph{prospective} and \emph{retrospective} provenance, where the former refers to a specification of a data transformation process or \emph{workflow} \cite{Freire2008}, and the latter refers to the derivations that account for the actual outcomes of an execution of the process.
+
+DataONE (Data Observation Network for Earth) is a federated data network for open, persistent, robust, and secure access to well-described and easily discovered Earth observational data~\cite{dataone}. DataONE's primary goals include support for: data discovery, access, integration, and synthesis; education, training, and building community; and data sharing. The DataONE infrastructure consists of three principal components:
+
+\emph{Member Nodes} (MN) represent existing or new data repositories that support the DataONE Member Node API; \emph{Coordinating Nodes} (CN) serve the coordination and discovery needs of the network; and the \emph{Investigator Toolkit} which contains tools that enable programmatic interaction with DataONE infrastructure through a REST service API exposed by the CNs and MNs.
+
+
+\mypara{DataONE Search} is a web-based application that lets users seamlessly and efficiently discover publicly accessible data packages within the DataONE federated network of Member Node repositories. It allows users to search across space (geographical region), time, and using a set of keywords. Users sign in to DataONE Search using ORCID credentials, Google accounts, or institutional accounts. DataONE enables new user features like provenance-based browsing as part of its search facility. In the next section, we will present new DataONE provenance tools and the visualization of provenance with DataONE Search \cite{dataone}.
+
+
+\section{Provenance Feature Description}  \label{demo}
+
+We present two features related to provenance: \emph{Run Manager}, an API for capturing retrospective provenance from R \cite{recordr} and MATLAB \cite{matlabdataone} script runs; and \emph{YesWorkflow} \cite{yesworkflow}, a script annotation and provenance querying tool, designed to help users better understand the structure and intent of a script, and to expose and query its provenance.
+
+We introduce the provenance and search features of DataONE by means of an example involving three Earth scientist personas who interact through a DataONE Member Node: In \Figref{fig0}, Alice has developed a script for producing C$_3$/C$_4$ carbon soil maps~\cite{MsTMIP-model-driver-data-set}.  She uses the YesWorkflow (YW) tool to mark-up the script and expose the underlying workflow view (i.e., prospective provenance) that is inherent in her soil mapping code as shown in \Figref{fig2}.
+
+\begin{figure}[t]  
+\centering 
+\includegraphics[width=0.45\textwidth]{figs/alice-bob-charlie-sequence-crop} \caption{Provenance Use Case: (1) Alice runs \code{script.m} with the DataONE Run Manager to create data package $P_A$, which she publishes to the DataONE network; (2) Bob later finds and downloads Alice's data, uses it in his \code{analysis.m}, creating and then publishing package $P_B$; (3) Charlie searches DataONE, finds Bob's $P_B$, and recognizes its dependence on Alice's $P_A$.}  \label{fig0} 
+\end{figure}
+
+By using the \emph{Run Manager} to run her script, Alice not only obtains the expected results, but she also captures their provenance, compliant with DataONE's ProvONE data model. 
+ProvONE~\cite{provone} is an extension of the W3C PROV-O~\cite{prov-o} standard for representing provenance, and includes specializations for representing both retrospective provenance about the runtime execution and prospective provenance about the structure and flow of the analytical script or workflow.
+%
+At the end of the experimentation phase, Alice is ready to publish her results to a DataONE Member Node.  To do so, she uses the DataONE MATLAB tool to automatically generate a DataONE-compliant data package in OAI-ORE format, including the ProvONE provenance document, the script itself, and its YW-generated workflow view.
+
+
+\begin{figure}[h]
+\centering   
+\includegraphics[width=0.75\textwidth]{figs/abc-crop}
+\caption{Charlie's view on the DataONE demo site: (1) A YesWorkflow model for Alice's soil processing script; (2) Data lineage from Bob's results back through his script inputs to Alice's data package; (3) Two visualizations produced by Bob's water use efficiency analysis script.}
+\label{fig2}
+\end{figure}
+
+
+Bob's interaction with DataONE begins with a user interface search, i.e., using the keyword ``grass'', he discovers Alice's data package, amongst others.  He decides to use three NetCDF output data files which are part of her package, as input to his Grassland Water Use Efficiency Analysis script~\cite{MsTMIP-model-output-data-set}.  Having identified the data of interest in the Member Node, Bob uses its public identifier \textit{id} to retrieve it and use it in his own code (\code{GrasslandWUE.m}).  Specifically, the \code{MemberNode.get}(session, id) call, available from the MATLAB toolbox, not only retrieves Alice's data package, but it also ensures that the download event is recorded as part of a new provenance document, associated with Bob's analysis.
+%
+If Bob manually downloaded Alice's data (i.e., without using the DataONE tool), then the link between the data packages would likely be broken, leading to a disconnect in provenance and requiring additional ``stitching'' operations~\cite{missing-link}.
+
+
+Instead, by retaining the same identifier throughout, the tool implicitly establishes a connection between Alice's work and Bob's, namely by adding a provenance statement of the form (\emph{{Bob's\_execution}}, \code{prov{:}used}, {\emph{Alice's\_data\_id}}). Bob then proceeds to operate on the data using the DataONE MATLAB toolbox just as Alice did, eventually publishing a new data package with his own results and their provenance.  At this point, the two provenance documents are physically disjoint, as they reside in different data packages, but they are logically connected, namely through the \emph{prov:used} statement mentioned above.  As they are both indexed by the CN upon publication of the data package, this logical connection emerges automatically when a third party, say Charlie, explores one of the two data packages:
+
+Charlie discovers Bob's data packages on DataONE and is able to navigate back to the data that Bob used, i.e., Alice's data package depicted in \Figref{fig2}~\cite{Katz,data-trajectories}. When he searches the DataONE network using the same keyword ``grass'' from the web search interface, two data packages are displayed as shown in \Figref{fig2}. One data package was created by Alice \cite{yaxing}, the other was created by Bob \cite{christopher}.
+
+Crucially, the provenance of the two datasets is now manifested visually along with their logical connection, as shown in the DataONE Search web UI for our demo site \cite{dataone-demo} (Fig.~\ref{fig2}) and is available to Charlie. Specifically, Charlie can not only visualize the two data packages (Alice's is at the top and Bob's at the bottom), but he is also aware of the derivation of Alice's data through Bob's script.
+
+Provenance details for any input or output in the provenance graph can be viewed by clicking on the icons shown in the figure. % \cite[Fig.\,3]{dataone-prov-tech-report-2016}.
+DataONE Search also provides human language descriptions of how data are used or generated via the script and models, and provides navigation to ancestors and descendants in the data derivation chain.
+%
+In this example, Charlie quickly learns that Alice's script \code{C3\_C4\_map\_present\_with\_comments.m} takes twenty-five input files~\cite{MsTMIP-model-driver-data-set} and produces six outputs, shown on the left and right side of Alice's data package, respectively. The bottom three outputs in Alice's data package are the NetCDF data files that represent three different world map grids of percentage of grass types (C$_3$ grass fraction, C$_4$ grass fraction, and total grass fraction)~\cite{MsTMIP-model-driver-data-set}. In addition, a model graph is displayed at the intermediate layer that was generated by the YesWorkflow tool declaring step by step how data are used and derived in the script~\cite{yesworkflow}. Similarly, the provenance information is associated with Bob's data package in Fig.~\ref{fig2}~\cite{christopher,dataone-prov-tech-report-2016,MsTMIP-model-output-data-set}.
+
+
+%\section{Conclusions}
+
+\mypara{Summary.}  As outlined above, we describe new and unique provenance capabilities in the large, scientific data federation network DataONE. The search feature was released to the public in late 2015; the R and MATLAB provenance tools in early 2016.
+
+%\begin{small}
+\bibliography{references}
+\bibliographystyle{splncs03}
+%\end{small}
+
+\begin{appendix}
+  \section{Poster Overview (\textcolor{red}{will be removed for the CR version)}}
+
+
+We plan to have the following panels/components in the poster:
+\begin{enumerate}
+\item The Problem: Need better support for transparency and reproducibility
+\item The Example/Use Case: C3/C4 carbon soil maps
+\item The Idea: Employ provenance (prospective and retrospective) 
+\item The Approach :
+  \begin{enumerate}
+  \item Use MATLAB and/or R provenance recorders (for retrospective provenance)
+  \item Use YesWorkflow (for prospective provenance)
+\end{enumerate}
+\item The Architecture: DataONE Member Nodes, Coordinating Nodes, Investigator Toolkit
+\item The Findings/Results: First large data-federation project to support provenance capture for improved transparency and reproducibility; providing transitive credit (Charlie acknowledging not just Bob, but also Alice).
+\end{enumerate}
+
+  
+\end{appendix}
+
+
+\end{document}
