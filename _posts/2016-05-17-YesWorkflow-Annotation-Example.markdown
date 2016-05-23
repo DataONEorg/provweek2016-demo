@@ -4,10 +4,7 @@ title:  "YesWorkflow Annotation Example"
 date:   2016-05-17 12:25:30 -0500
 categories: DataONE provenance
 ---
-
-A user can use the [YesWorkflow (YW) tool](https://github.com/yesworkflow-org/yw-prototypes) to mark-up the script and expose the
-underlying workflow view (i.e., **prospective** provenance). For example, Alice's soil mapping
-code is shown as below.
+[YesWorkflow](https://github.com/yesworkflow-org/yw-prototypes)  is a tool that models conventional scripts and exposes the underlying workflow view (**prospective** provenance). A YesWorkflow user can add special YesWorkflow (YW) comments to existing scripts. These comments declare how data is used and results are produced, step by step, by the script. Then, the YesWorkflow tool interpret the YW comments and produce a graphical output that reveals the stages of computation and the flow of data in the script. The YesWorkflow annotation table is available at here. Next, we will use [Alice's soil mapping script]({{site.baseurl}}/data/C3_C4_map_present_NA.m) to demonstrate the usage of the YesWorkflow tool.
 
 ![image text]({{site.baseurl}}/img/alice-yw-combined-view.jpg "YesWorkflow-annotation")
 
