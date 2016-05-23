@@ -17,7 +17,7 @@ called Run Manager. The second is a script annotation tool for **prospective** p
 
 
 
-Check out the [Matlab-DataONE User Guide][matlab-dataone-user-guide] and [Recordr-DataONE Introduction][intro-recordr] for more information on DataONE provenance tools. File all bugs/feature requests at [Matlab-Dataone Github Repository][matlab-dataone Github repo] and [DataONE Provenance Tracking for R][recordr-Github-repo].
+Check out the [Matlab-DataONE User Guide][matlab-dataone-user-guide] and [Recordr-DataONE Introduction]({{site.baseurl}}/data/intro_recordr.pdf) for more information on DataONE provenance tools. File all bugs/feature requests at [Matlab-Dataone Github Repository][matlab-dataone Github repo] and [DataONE Provenance Tracking for R][recordr-Github-repo].
 
 [matlab-dataone-user-guide]: https://github.com/DataONEorg/matlab-dataone/blob/master/docs/user-guide.rst
 [matlab-dataone Github repo]:   https://github.com/DataONEorg/matlab-dataone
