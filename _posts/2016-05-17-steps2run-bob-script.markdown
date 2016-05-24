@@ -4,21 +4,16 @@ title:  "Steps to Run Bob's Script"
 date:   2016-05-17 12:15:30 -0500
 categories: DataONE provenance
 ---
-Bob’s interaction with [DataONE Search](https://search-sandbox-2.test.dataone.org) begins with a user interface search using the
-keyword **grass**, he discovers [Alice’s data package](https://search-sandbox-2.test.dataone.org/#view/metadata_e859d2dd-c5e6-4ec6-892f-1b00bb6f8f65.xml), amongst others. He decides to use
+Bob interacts with [DataONE Search](https://search-sandbox-2.test.dataone.org) using the
+keyword **grass**. Then, he discovers [Alice’s data package](https://search-sandbox-2.test.dataone.org/#view/metadata_e859d2dd-c5e6-4ec6-892f-1b00bb6f8f65.xml), amongst others. He decides to use
 three NetCDF output data files which are part of her package, as input to his Grassland
 Water Use Efficiency Analysis script. Having identified the data of interest in the
-Member Node, Bob uses `its public identifier id` to retrieve it and use it in his own
-code (`GrasslandWUE.m`). Specifically, the `MemberNode:get(session, id)` call, available
+Member Node, Bob uses the same public identifier ids to retrieve these data and uses these ids in his own
+code ([GrasslandWUE.m]({{site.baseurl}}/data/GrasslandWUE-yw.m)). Specifically, the `MemberNode:get`(session, id) call, which is available
 from the MATLAB toolbox, not only retrieves Alice’s data package, but it also ensures
 that the download event is recorded as part of a new provenance document, associated
-with Bob’s analysis. If Bob manually downloaded Alice’s data (i.e., without using the
-DataONE tool), then the link between the data packages would likely be broken, leading
-to a disconnect in provenance and requiring additional “stitching” operations.
-
-Bob then proceeds to operate
-on the data using the DataONE MATLAB toolbox just as Alice did, eventually publishing
-a new data package with his own results and their provenance.
+with Bob’s analysis. Bob then proceeds to operate on the data using the method record( ) just as Alice did, eventually publishing
+a new data package with his own results and their provenance using the function publish( ).
 
 Steps to run Bob's script are listed as below and an example [data package for Bob](https://search-sandbox-2.test.dataone.org/#view/metadata_07277c1f-b2c2-467c-8aa2-792863524a21.xml) was generated.
 
