@@ -9,7 +9,7 @@ keyword **grass**. Then, he discovers [Alice’s data package](https://search-sa
 three NetCDF output data files which are part of her package, as input to his Grassland
 Water Use Efficiency Analysis script. Having identified the data of interest in the
 Member Node, Bob uses the same public identifier ids to retrieve these data and uses these ids in his own
-code ([GrasslandWUE.m]({{site.baseurl}}/data/GrasslandWUE-yw.m)). Specifically, the `MemberNode:get`(session, id) call, which is available
+code ([GrasslandWUE.m]({{site.baseurl}}/data/GrasslandWUE-yw.m)). Specifically, the **MemberNode:get**(session, id) call, which is available
 from the MATLAB toolbox, not only retrieves Alice’s data package, but it also ensures
 that the download event is recorded as part of a new provenance document, associated
 with Bob’s analysis. Bob then proceeds to operate on the data using the method record( ) just as Alice did, eventually publishing
