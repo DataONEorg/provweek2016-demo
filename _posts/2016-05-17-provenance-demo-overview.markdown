@@ -13,11 +13,12 @@ data products. With DataONE provenance tools, each run of a script will generate
 
 In this demonstration we describe two features related to provenance. The first is an API
 for capturing **retrospective** provenance from [R](https://github.com/NCEAS/recordr) and [Matlab](https://github.com/DataONEorg/matlab-dataone) script executions,
-called Run Manager. The second is a script annotation tool for **prospective** provenance, which we call [YesWorkflow](https://github.com/yesworkflow-org/yw-prototypes), designed to help developers and users better understand the structure and intent of a script.
+called **Run Manager**. The second is a script annotation tool for **prospective** provenance, which we call [YesWorkflow](https://github.com/yesworkflow-org/yw-prototypes), designed to help developers and users better understand the structure and intent of a script.
 
 
+The RunManager can manage the file I/O events  and determine provenance relationships between file objects related to a script execution. Information about the script execution is stored in the cache. The RunManager provides functions for capturing, searching, archiving, and sharing provenance. The supported functions are available at [DataONE Run Manager and API for Capturing Provenance in Script Executions](https://github.com/DataONEorg/sem-prov-design/blob/master/docs/PROV-capture/Run-manager-API.rst).  
 
-Check out the [Matlab-DataONE User Guide][matlab-dataone-user-guide] and [Recordr-DataONE Introduction]({{site.baseurl}}/data/intro_recordr.pdf) for more information on DataONE provenance tools. File all bugs/feature requests at [Matlab-Dataone Github Repository][matlab-dataone Github repo] and [DataONE Provenance Tracking for R][recordr-Github-repo].
+DataONE provides two ways of RunManager implementation for R and Matlab. Check out the [Matlab-DataONE User Guide][matlab-dataone-user-guide] and [Recordr-DataONE Introduction]({{site.baseurl}}/data/intro_recordr.pdf) for more information on DataONE provenance tools. File all bugs/feature requests at [Matlab-Dataone Github Repository][matlab-dataone Github repo] and [DataONE Provenance Tracking for R][recordr-Github-repo].
 
 [matlab-dataone-user-guide]: https://github.com/DataONEorg/matlab-dataone/blob/master/docs/user-guide.rst
 [matlab-dataone Github repo]:   https://github.com/DataONEorg/matlab-dataone
