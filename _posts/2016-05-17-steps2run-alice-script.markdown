@@ -5,13 +5,7 @@ date:   2016-05-17 12:00:30 -0500
 categories: DataONE provenance
 ---
 
-We present two features related to provenance: `Run Manager`, an API for capturing
-retrospective provenance from R and MATLAB script runs; and YesWorkflow, a script annotation and provenance querying tool, designed to help users better
-understand the structure and intent of a script, and to expose and query its provenance.
-
-We introduce the provenance and search features of DataONE by means of an example
-involving three Earth scientist personas who interact through a DataONE Member
-Node: In demo use case, Alice has developed a script for producing Carbon3/Carbon4 soil
+This post describes the steps of running Alice's script and recording both retrospective and prospective provenance for the script execution. Assume that Alice has developed a script for producing Carbon3/Carbon4 soil
 maps. She uses the YesWorkflow (YW) tool to mark-up the script and expose
 the underlying workflow view (i.e., **prospective** provenance).
 
