@@ -4,7 +4,7 @@ title:  "Provenance Demonstration Use Case"
 date:   2016-05-17 11:35:30 -0500
 categories: DataONE provenance
 ---
-We introduce the provenance and search features of DataONE by means of an example
-involving three earth scientists who interact through a DataONE member node, as shown below.
+We introduce the provenance and search features of DataONE by means of a use case
+involving three earth scientists who interact through a DataONE member node, as shown below. A user "Alice" can annotate a (Matlab, R, etc.) script using the YesWorkflow (YW) tool to describe the underlying workflow or prospective provenance. After Alice has run the script, the result files, script, prospective provenance, and retrospective provenance, represented in the ProvONE provenance model, are bundled into an OAI-ORE compliant data package and uploaded to the DataONE network. A second user ("Bob") discovers Alice's package and uses her data in his own analysis. As both data packages of Alice and Bob are indexed by the coordinating node, a third user ("Charlie") who browses DataONE Search site can discovers the full provenance of Bob's results.
 
 ![image text]({{site.baseurl}}/img/alice-bob-charlie-sequence-crop.jpg "Run Manager Demonstration Use Case")
