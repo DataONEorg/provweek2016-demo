@@ -7,13 +7,11 @@ categories: DataONE provenance
 
 This post describes the steps of running Alice's script and recording both retrospective and prospective provenance for the script execution. Assume that Alice has developed a script for producing Carbon3/Carbon4 soil
 maps. She uses the YesWorkflow (YW) tool to mark-up the script and expose
-the underlying workflow view (i.e., **prospective** provenance).
+the underlying workflow view (i.e., prospective provenance).
 
 By using the Run Manager to run her script, Alice not only obtains the expected
-results, but she also captures their provenance, compliant with DataONE’s [ProvONE data model][provone]. ProvONE is an extension of the W3C [PROV-O][prov-o] standard for representing
-provenance, and includes specializations for representing both retrospective
-provenance about the runtime execution and prospective provenance about the structure
-and flow of the analytical script or workflow. At the end of the experimentation
+results, but she also captures their provenance, compliant with DataONE’s [ProvONE data model][provone].
+At the end of the experimentation
 phase, Alice is ready to publish her results to a DataONE Member Node. To do so, she
 uses the DataONE MATLAB tool to automatically generate a DataONE-compliant data
 package in OAI-ORE format, including the ProvONE provenance document, the script
