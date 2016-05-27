@@ -1,7 +1,6 @@
 ---
 layout: post
 title:  "Charlie's View on DataONE Search"
-date:   2016-05-17 12:20:30 -0500
 categories: DataONE provenance
 ---
 Charlie discovers [Bob’s data packages](https://search-sandbox-2.test.dataone.org/#view/metadata_07277c1f-b2c2-467c-8aa2-792863524a21.xml) on DataONE and is able to navigate back to the

@@ -1,7 +1,6 @@
 ---
 layout: post
 title:  "Steps to Run Bob's Script"
-date:   2016-05-17 12:15:30 -0500
 categories: DataONE provenance
 ---
 Bob interacts with [DataONE Search](https://search-sandbox-2.test.dataone.org) using the

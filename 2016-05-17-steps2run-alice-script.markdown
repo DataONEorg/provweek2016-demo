@@ -1,7 +1,6 @@
 ---
 layout: post
 title:  "Steps to Run Alice's Script"
-date:   2016-05-17 12:00:30 -0500
 categories: DataONE provenance
 ---
 
