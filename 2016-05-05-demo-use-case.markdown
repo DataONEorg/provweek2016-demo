@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title:  "Provenance Demonstration Use Case"
 categories: DataONE provenance
 ---

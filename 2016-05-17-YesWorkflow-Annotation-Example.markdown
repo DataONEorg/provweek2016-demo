@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title:  "YesWorkflow Annotation Example"
 categories: DataONE provenance
 ---

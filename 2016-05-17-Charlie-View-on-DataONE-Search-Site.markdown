@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title:  "Charlie's View on DataONE Search"
 categories: DataONE provenance
 ---

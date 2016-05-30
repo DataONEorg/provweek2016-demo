@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title:  "Steps to Run Bob's Script"
 categories: DataONE provenance
 ---

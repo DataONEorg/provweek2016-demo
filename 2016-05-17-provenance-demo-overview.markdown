@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title:  "DataONE Provenance Support Demo Overview"
 categories: DataONE provenance
 ---

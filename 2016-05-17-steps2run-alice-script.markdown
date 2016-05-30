@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title:  "Steps to Run Alice's Script"
 categories: DataONE provenance
 ---
