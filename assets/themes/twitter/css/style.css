@@ -44,7 +44,7 @@ html, body {
 
 .navbar .brand a:hover {
   color: #33666;
-} 
+}
 
 .nav {
   font-size: 14px;
@@ -308,12 +308,12 @@ h1 {
 #projects {
     position: relative;
 }
- 
-/*replace the content value with the 
+
+/*replace the content value with the
 corresponding value from the list below*/
- 
+
 #projects:before {
-    content: "\f0ad"; 
+    content: "\f0ad";
     text-align: center;
     font-family: FontAwesome;
     font-style: normal;
@@ -327,12 +327,12 @@ corresponding value from the list below*/
 #linguistics {
     position: relative;
 }
- 
-/*replace the content value with the 
+
+/*replace the content value with the
 corresponding value from the list below*/
- 
+
 #linguistics:before {
-    content: "\f02d"; 
+    content: "\f02d";
     text-align: center;
     font-family: FontAwesome;
     font-style: normal;
@@ -346,12 +346,12 @@ corresponding value from the list below*/
 #art {
     position: relative;
 }
- 
-/*replace the content value with the 
+
+/*replace the content value with the
 corresponding value from the list below*/
- 
+
 #art:before {
-    content: "\f03e"; 
+    content: "\f03e";
     text-align: center;
     font-family: FontAwesome;
     font-style: normal;
@@ -365,12 +365,12 @@ corresponding value from the list below*/
 #fossils {
     position: relative;
 }
- 
-/*replace the content value with the 
+
+/*replace the content value with the
 corresponding value from the list below*/
- 
+
 #fossils:before {
-    content: "\f00c"; 
+    content: "\f00c";
     text-align: center;
     font-family: FontAwesome;
     font-style: normal;
@@ -384,12 +384,12 @@ corresponding value from the list below*/
 #blog-posts {
     position: relative;
 }
- 
-/*replace the content value with the 
+
+/*replace the content value with the
 corresponding value from the list below*/
- 
+
 #blog-posts:before {
-    content: "\f040"; 
+    content: "\f040";
     text-align: center;
     font-family: FontAwesome;
     font-style: normal;
