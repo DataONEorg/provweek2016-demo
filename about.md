@@ -1,6 +1,6 @@
 ---
 layout: default
-title: About
+title: Useful Project Repository Links
 ---
 
 You can find out more information about [DataONE](https://www.dataone.org).
