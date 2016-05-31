@@ -7,7 +7,7 @@ html, body {
 }
 .navbar-inner {
   min-width: 10px;
-  height: 20px;
+  height: 40px;
   min-height: 20px;
   font-size: 10px;
   line-height: 10px;
@@ -107,7 +107,7 @@ footer {
 }
 
 .wrapper {
-  margin-top: 20px;
+  margin-top: 45px;
 }
 
 .front-header img {

@@ -1,13 +1,21 @@
-<nav class="nav-primary" role="navigation">
-  <div class="nav-collapse">
-   <ul class="nav">
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
 
-    {% for p in site.pages %}
-      <li>
-        <a {% if p.url == page.url %}class="active"{% endif %} href="{{ site.baseurl }}{{ p.url }}">{{ p.title }}</a>
-      </li>
-    {%  endfor %}
-   </ul>
+      <nav class="nav-primary" role="navigation">
+        <div class="nav-collapse">
+          <ul class="nav">
 
-  </div>
-</nav>
+            {% for p in site.pages %}
+             <li>
+                <a {% if p.url == page.url %}class="active"{% endif %} href="{{ site.baseurl }}{{ p.url }}">{{ p.title }}</a>
+             </li>
+            {%  endfor %}
+          </ul>
+
+        </div>
+      </nav>
+
+    </div> <!-- /container -->
+  </div> <!-- /navbar-inner -->
+</div> <!-- /navbar -->

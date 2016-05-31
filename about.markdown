@@ -1,7 +1,6 @@
 ---
 layout: default
 title: About
-permalink: /about/
 ---
 
 You can find out more information about [DataONE](https://www.dataone.org).
