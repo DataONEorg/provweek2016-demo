@@ -1,7 +1,7 @@
 ---
 layout: default
-title:  "DataONE Provenance Support Demo Overview"
-categories: DataONE provenance
+title: DataONE Provenance Demo
+home: true
 ---
 # Overview
 
@@ -15,7 +15,7 @@ for capturing **retrospective** provenance from R and Matlab script executions,
 called **Run Manager**. The second is a script annotation tool for **prospective** provenance, which we call **YesWorkflow**, designed to help developers and users better understand the structure and intent of a script.
 
 
-The RunManager can manage the file I/O events  and determine provenance relationships between file objects related to a script execution. Information about the script execution is stored in the cache. The RunManager provides functions for capturing, searching, archiving, and sharing provenance. The supported functions are available at [DataONE Run Manager and API for Capturing Provenance in Script Executions](https://github.com/DataONEorg/sem-prov-design/blob/master/docs/PROV-capture/Run-manager-API.rst).  
+The RunManager can manage the file I/O events  and determine provenance relationships between file objects related to a script execution. Information about the script execution is stored in the cache. The RunManager provides functions for capturing, searching, archiving, and sharing provenance. The supported functions are available at [DataONE Run Manager and API for Capturing Provenance in Script Executions](https://github.com/DataONEorg/sem-prov-design/blob/master/docs/PROV-capture/Run-manager-API.rst).
 
 DataONE provides two RunManager implementation for [DataONE recordr R package](https://github.com/NCEAS/recordr)  and [DataONE Matlab toolbox](https://github.com/DataONEorg/matlab-dataone) scripts. Check out the [Matlab-DataONE User Guide][matlab-dataone-user-guide] and [Recordr-DataONE Introduction]({{site.baseurl}}/data/intro_recordr.pdf) for more information on DataONE provenance tools. File all bugs/feature requests at [Matlab-DataONE Github Repository][matlab-dataone Github repo] and [DataONE Provenance Tracking for R][recordr-Github-repo].
 
