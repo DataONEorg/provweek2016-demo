@@ -3,7 +3,21 @@ layout: default
 title:  "YesWorkflow Annotation Example"
 categories: DataONE provenance
 ---
-[YesWorkflow](https://github.com/yesworkflow-org/yw-prototypes)  is a tool that models conventional scripts and exposes the underlying workflow view (**prospective** provenance). Firstly, a YesWorkflow user can add special YesWorkflow (YW) comments to existing scripts. These comments declare how data are used and results are produced, step by step, by the script. Then, the YesWorkflow tool interprets the YW comments and produces a graphical output that reveals the computation steps and the data flows hidden in the script. The YesWorkflow annotation table is available at [here](). Lastly, YesWorkflow provides query capability for the prospective and retrospective provenance of the scripts. We use [Alice's soil mapping script]({{site.baseurl}}/data/C3_C4_map_present_NA.m) to demonstrate the usage of the YesWorkflow tool.
+[YesWorkflow](https://github.com/yesworkflow-org/yw-prototypes)  is a tool that models conventional scripts and exposes the underlying workflow view (**prospective** provenance). Firstly, a YesWorkflow user can add special YesWorkflow (YW) comments to existing scripts. These comments declare how data are used and results are produced, step by step, by the script. Then, the YesWorkflow tool interprets the YW comments and produces a graphical output that reveals the computation steps and the data flows hidden in the script. The YesWorkflow annotation table is available at the table below. Lastly, YesWorkflow provides query capability for the prospective and retrospective provenance of the scripts. We use [Alice's soil mapping script]({{site.baseurl}}/data/C3_C4_map_present_NA.m) to demonstrate the usage of the YesWorkflow tool.
+
+
+<table border="2" style="width:100%">
+<tr>
+<td>Keywords</td>
+<td>Definitions</td>
+</tr>
+{% for r in site.data.YWKeywords %}
+  <tr>
+    <td>{{ r.Keywords }}</td>
+    <td>{{ r.Definitions }}</td>
+  </tr>
+{% endfor %}
+</table>
 
 ![image text]({{site.baseurl}}/img/alice-yw-combined-view.jpg "YesWorkflow-annotation")
 

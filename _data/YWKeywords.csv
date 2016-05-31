@@ -1,0 +1,13 @@
+Keywords,Definitions
+@BEGIN &lt;name_of_code_block&gt; ,Specifies the beginning of a code block. Each @BEGIN annotation must be paired with an @END annotation later in the same source file. A @BEGIN-@END pair can occur between other pairs to indicate nested code blocks
+@END &lt;name_of_code_block&gt; ,Specifies the end of a code block. @END must be paired with a @BEGIN annotation earlier in the same source file. A @BEGIN-@END pair can occur between other pairs to indicate nested code blocks
+@IN &lt;input_data_name&gt;[@URI &lt;path_to_file | uri_template&gt;] ,Specifies relevant input data elements of a code block. @IN should  appear in the code bracketed by associated @BEGIN and @END tags
+@PARAM &lt;parameter_name&gt;[@URI &lt;path_to_file | uri_template&gt;] ,Specifies a block’s parameters. It defines the values that control how the input data are processed. @PARAM should appear in the code bracketed by associated @BEGIN and @END tags
+@OUT &lt;output_data_name&gt;[@URI &lt;path_to_file | uri_template&gt;] ,Models relevant output data elements of a code block. @OUT should appear in the code bracketed by associated @BEGIN and @END tags
+@AS &lt;alias_name&gt; ,Links a program variable in the script code to the scientist’s concepts
+@URI &lt;path_to_file | uri_template&gt; ,Declares the path to a resource. A URI template can be either a path to a file or a template having template variables for multiple files (or other data resource) written or read by a script in a specific code block.
+@RET &lt;returned_var&gt;[@URI &lt;path_to_file | uri_template&gt;] ,Defines returned results at the conceptual level
+@CALL &lt;function_name&gt; ,Specifies a function call
+@DESC &lt;description_string&gt; ,Specifies a description to a program or a port
+@FILE &lt;path_to_file&gt; ,Specifies a path to a local file
+@LOG &lt;log_file_name&gt; ,Specifies a log file
